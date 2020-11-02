@@ -54,16 +54,21 @@ def keep_logging(interval, skip_duplicate):
         log_active_window(interval, skip_duplicate)
 
 
-if __name__ == '__main__':
+def main():
     import argparse
+    # 引数を指定しない場合は、2秒ごとに記録し、重複タイトルはスキップし変更のタイミングで切り替え
     parser = argparse.ArgumentParser()
     parser.add_argument('-i', '--interval',
                         help='set interval of logging in seconds. default interval is 120',
                         type=int,
-                        default=120)
+                        default=2)
     parser.add_argument('-s', '--skip_duplicate',
                         help='if this argument is set, skip logging of duplicated title',
                         action='store_true',
-                        default=False)
+                        default=True)
     args = parser.parse_args()
     keep_logging(args.interval, args.skip_duplicate)
+
+
+if __name__ == '__main__':
+    main()
