@@ -53,7 +53,7 @@ def log_active_window(interval, skip_duplicate):
     if (skip_duplicate == True and title == old):
         return
     out = get_log_string(title)
-    print(out)
+    print("active_window: ", out)
 
     with open(get_log_filename(day), "a", encoding="UTF-8", errors="ignore") as f:
         f.write(out + "\n")
@@ -84,11 +84,13 @@ def get_all_windows() -> list:
     EnumWindows(EnumWindowsProc(foreach_window), 0)
 
     # 以下のブラックリストは表示しない（これらは裏で常駐してるみたい）
+    # TODO: 随時追加していく
     black_list = {"",
                   "Microsoft Text Input Application",  # なにこれ
                   "設定",  # なぜか裏で動いてる
                   "映画 & テレビ",  # なぜかおる
                   "Program Manager",  # 強制終了やトラブルシューティングのために常駐
+                  "Xbox Game bar"
                   }
     # 重複、ブラックリストを省く
     titles = set(titles) - black_list
@@ -121,6 +123,7 @@ def keep_logging(interval, skip_duplicate):
     while True:
         log_active_window(interval, skip_duplicate)
 
+        # プログラムの起動と終了を検知
         current_program_list = get_all_windows()
         monitor_program_is_started(
             previous_program_list=previous_program_list,
@@ -129,6 +132,7 @@ def keep_logging(interval, skip_duplicate):
             previous_program_list=previous_program_list,
             current_program_list=current_program_list)
         previous_program_list = current_program_list
+
         time.sleep(interval)
 
 
@@ -145,6 +149,8 @@ def main():
                         action='store_true',
                         default=True)
     args = parser.parse_args()
+
+    # 処理ループ
     keep_logging(args.interval, args.skip_duplicate)
 
 
