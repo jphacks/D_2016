@@ -19,7 +19,20 @@ def format_date(date):
 
 
 def get_log_filename(date):
-    return date + "-Window_Log.md"
+    return "log/" + date + "-Window_Log.txt"
+
+
+def get_old_activity() -> str:
+    tmp_file_path = "log/tmp.txt"
+    with open(tmp_file_path, "r", encoding="UTF-8", errors="ignore") as f:
+        old = f.readline()
+    return old
+
+
+def set_old_activity(old_activity: str):
+    tmp_file_path = "log/tmp.txt"
+    with open(tmp_file_path, "w", encoding="UTF-8", errors="ignore") as f:
+        f.write(old_activity)
 
 
 def log_active_window(interval, skip_duplicate):
@@ -35,7 +48,8 @@ def log_active_window(interval, skip_duplicate):
         if this value is True, same title is not logged.
     """
     day = format_date(datetime.datetime.today())
-    old = ""
+    old = get_old_activity()
+
     with open(get_log_filename(day), "a", encoding="UTF-8", errors="ignore") as f:
         while day == format_date(datetime.datetime.now()):
             title = get_active_window_title()
@@ -46,6 +60,7 @@ def log_active_window(interval, skip_duplicate):
             f.write(out + "\n")
             f.flush()
             time.sleep(interval)
+            set_old_activity(title)
             old = title
 
 
@@ -121,20 +136,20 @@ def main():
                         action='store_true',
                         default=True)
     args = parser.parse_args()
-    # keep_logging(args.interval, args.skip_duplicate)
+    keep_logging(args.interval, args.skip_duplicate)
 
-    previous_program_list = get_all_windows()
+    # previous_program_list = get_all_windows()
 
-    while True:
-        current_program_list = get_all_windows()
-        monitor_program_is_started(
-            previous_program_list=previous_program_list,
-            current_program_list=current_program_list)
-        monitor_program_is_terminated(
-            previous_program_list=previous_program_list,
-            current_program_list=current_program_list)
-        previous_program_list = current_program_list
-        time.sleep(args.interval)
+    # while True:
+    #     current_program_list = get_all_windows()
+    #     monitor_program_is_started(
+    #         previous_program_list=previous_program_list,
+    #         current_program_list=current_program_list)
+    #     monitor_program_is_terminated(
+    #         previous_program_list=previous_program_list,
+    #         current_program_list=current_program_list)
+    #     previous_program_list = current_program_list
+    #     time.sleep(args.interval)
 
 
 if __name__ == '__main__':
