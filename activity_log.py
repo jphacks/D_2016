@@ -49,6 +49,42 @@ def log_active_window(interval, skip_duplicate):
             old = title
 
 
+def get_all_windows() -> list:
+    import ctypes
+
+    EnumWindows = ctypes.windll.user32.EnumWindows
+    EnumWindowsProc = ctypes.WINFUNCTYPE(ctypes.c_bool,
+                                         ctypes.POINTER(ctypes.c_int),
+                                         ctypes.POINTER(ctypes.c_int))
+    GetWindowText = ctypes.windll.user32.GetWindowTextW
+    GetWindowTextLength = ctypes.windll.user32.GetWindowTextLengthW
+    IsWindowVisible = ctypes.windll.user32.IsWindowVisible
+
+    titles = []
+
+    def foreach_window(hwnd, lParam):
+        if IsWindowVisible(hwnd):
+            length = GetWindowTextLength(hwnd)
+            buff = ctypes.create_unicode_buffer(length + 1)
+            GetWindowText(hwnd, buff, length + 1)
+            titles.append(buff.value)
+        return True
+    EnumWindows(EnumWindowsProc(foreach_window), 0)
+
+    # 以下のブラックリストは表示しない（これらは裏で常駐してるみたい）
+    black_list = {"",
+                  "Microsoft Text Input Application",  # なにこれ
+                  "設定",  # なぜか裏で動いてる
+                  "映画 & テレビ",  # なぜかおる
+                  "Program Manager",  # 強制終了やトラブルシューティングのために常駐
+                  }
+    # 重複、ブラックリストを省く
+    titles = set(titles) - black_list
+    print("起動中プログラム一覧を取得しました")
+    # print(*titles)
+    return list(titles)
+
+
 def keep_logging(interval, skip_duplicate):
     while True:
         log_active_window(interval, skip_duplicate)
@@ -67,7 +103,8 @@ def main():
                         action='store_true',
                         default=True)
     args = parser.parse_args()
-    keep_logging(args.interval, args.skip_duplicate)
+    # keep_logging(args.interval, args.skip_duplicate)
+    print(get_all_windows())
 
 
 if __name__ == '__main__':
