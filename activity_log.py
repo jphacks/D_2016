@@ -50,7 +50,9 @@ def log_active_window(interval, skip_duplicate):
     day = format_date(datetime.datetime.today())
     old = get_old_activity()
     title = get_active_window_title()
-    if (skip_duplicate == True and title == old):
+    if title == "":
+        return
+    if (skip_duplicate and title == old):
         return
     out = get_log_string(title)
     print("active_window: ", out)
