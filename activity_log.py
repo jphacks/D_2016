@@ -49,19 +49,16 @@ def log_active_window(interval, skip_duplicate):
     """
     day = format_date(datetime.datetime.today())
     old = get_old_activity()
+    title = get_active_window_title()
+    if (skip_duplicate == True and title == old):
+        return
+    out = get_log_string(title)
+    print(out)
 
     with open(get_log_filename(day), "a", encoding="UTF-8", errors="ignore") as f:
-        while day == format_date(datetime.datetime.now()):
-            title = get_active_window_title()
-            if (skip_duplicate == True and title == old):
-                continue
-            out = get_log_string(title)
-            print(out)
-            f.write(out + "\n")
-            f.flush()
-            time.sleep(interval)
-            set_old_activity(title)
-            old = title
+        f.write(out + "\n")
+        f.flush()
+        set_old_activity(title)
 
 
 def get_all_windows() -> list:
@@ -121,6 +118,7 @@ def monitor_program_is_started(previous_program_list: list, current_program_list
 def keep_logging(interval, skip_duplicate):
     while True:
         log_active_window(interval, skip_duplicate)
+        time.sleep(interval)
 
 
 def main():
