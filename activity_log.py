@@ -92,7 +92,7 @@ def get_all_windows() -> list:
                   }
     # 重複、ブラックリストを省く
     titles = set(titles) - black_list
-    print("起動中プログラム一覧を取得しました")
+    # print("起動中プログラム一覧を取得しました")
     # print(*titles)
     return list(titles)
 
@@ -116,8 +116,19 @@ def monitor_program_is_started(previous_program_list: list, current_program_list
 
 
 def keep_logging(interval, skip_duplicate):
+    previous_program_list = get_all_windows()
+
     while True:
         log_active_window(interval, skip_duplicate)
+
+        current_program_list = get_all_windows()
+        monitor_program_is_started(
+            previous_program_list=previous_program_list,
+            current_program_list=current_program_list)
+        monitor_program_is_terminated(
+            previous_program_list=previous_program_list,
+            current_program_list=current_program_list)
+        previous_program_list = current_program_list
         time.sleep(interval)
 
 
@@ -135,19 +146,6 @@ def main():
                         default=True)
     args = parser.parse_args()
     keep_logging(args.interval, args.skip_duplicate)
-
-    # previous_program_list = get_all_windows()
-
-    # while True:
-    #     current_program_list = get_all_windows()
-    #     monitor_program_is_started(
-    #         previous_program_list=previous_program_list,
-    #         current_program_list=current_program_list)
-    #     monitor_program_is_terminated(
-    #         previous_program_list=previous_program_list,
-    #         current_program_list=current_program_list)
-    #     previous_program_list = current_program_list
-    #     time.sleep(args.interval)
 
 
 if __name__ == '__main__':
