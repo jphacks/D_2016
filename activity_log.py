@@ -102,6 +102,7 @@ def get_all_windows() -> list:
 
 
 def monitor_program_is_terminated(previous_program_list: list, current_program_list: list) -> bool:
+    # FIXME: ブラウザの場合、タブを変えるだけで開始、終了判定してしまう
     diff = set(previous_program_list) - set(current_program_list)
     if diff:
         print("プログラムの終了を検知しました")
@@ -111,6 +112,7 @@ def monitor_program_is_terminated(previous_program_list: list, current_program_l
 
 
 def monitor_program_is_started(previous_program_list: list, current_program_list: list) -> bool:
+    # FIXME: ブラウザの場合、タブを変えるだけで開始、終了判定してしまう
     diff = set(current_program_list) - set(previous_program_list)
     if diff:
         print("プログラムの開始を検知しました")
