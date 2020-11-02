@@ -85,6 +85,24 @@ def get_all_windows() -> list:
     return list(titles)
 
 
+def monitor_program_is_terminated(previous_program_list: list, current_program_list: list) -> bool:
+    diff = set(previous_program_list) - set(current_program_list)
+    if diff:
+        print("プログラムの終了を検知しました")
+        print(diff)
+        return True
+    return False
+
+
+def monitor_program_is_started(previous_program_list: list, current_program_list: list) -> bool:
+    diff = set(current_program_list) - set(previous_program_list)
+    if diff:
+        print("プログラムの開始を検知しました")
+        print(diff)
+        return True
+    return False
+
+
 def keep_logging(interval, skip_duplicate):
     while True:
         log_active_window(interval, skip_duplicate)
@@ -104,7 +122,19 @@ def main():
                         default=True)
     args = parser.parse_args()
     # keep_logging(args.interval, args.skip_duplicate)
-    print(get_all_windows())
+
+    previous_program_list = get_all_windows()
+
+    while True:
+        current_program_list = get_all_windows()
+        monitor_program_is_started(
+            previous_program_list=previous_program_list,
+            current_program_list=current_program_list)
+        monitor_program_is_terminated(
+            previous_program_list=previous_program_list,
+            current_program_list=current_program_list)
+        previous_program_list = current_program_list
+        time.sleep(args.interval)
 
 
 if __name__ == '__main__':
