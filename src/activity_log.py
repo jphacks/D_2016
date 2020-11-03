@@ -18,8 +18,8 @@ def get_log_string(title: str, state: str = "A"):
     - T: プログラムが終了
     """
     assert state in ("A", "S", "T"), "stateは、A, S, Tのいずれかを指定"
-    now = datetime.datetime.now().strftime('* %Y%m%d-%H:%M:%S `')
-    return state + ": " + now + title + '`'
+    now = datetime.datetime.now().strftime('%Y%m%d-%H:%M:%S, ')
+    return state + ", " + now + title
 
 
 def format_date(date):
