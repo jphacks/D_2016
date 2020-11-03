@@ -114,8 +114,9 @@ def monitor_program_is_terminated(previous_program_list: list, current_program_l
     # FIXME: ブラウザの場合、タブを変えるだけで開始、終了判定してしまう
     diff = set(previous_program_list) - set(current_program_list)
     if diff:
-        print("プログラムの終了を検知しました")
-        print(diff)
+        title = list(diff)[0]  # 差分はひとつである前提
+        out = get_log_string(title, "T")
+        print(out)
         return True
     return False
 
@@ -124,8 +125,9 @@ def monitor_program_is_started(previous_program_list: list, current_program_list
     # FIXME: ブラウザの場合、タブを変えるだけで開始、終了判定してしまう
     diff = set(current_program_list) - set(previous_program_list)
     if diff:
-        print("プログラムの開始を検知しました")
-        print(diff)
+        title = list(diff)[0]  # 差分はひとつである前提
+        out = get_log_string(title, "S")
+        print(out)
         return True
     return False
 
