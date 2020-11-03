@@ -110,26 +110,26 @@ def get_all_windows() -> list:
     return list(titles)
 
 
-def monitor_program_is_terminated(previous_program_list: list, current_program_list: list) -> bool:
+def monitor_program_is_terminated(previous_program_list: list, current_program_list: list) -> str:
     # FIXME: ブラウザの場合、タブを変えるだけで開始、終了判定してしまう
     diff = set(previous_program_list) - set(current_program_list)
     if diff:
         title = list(diff)[0]  # 差分はひとつである前提
         out = get_log_string(title, "T")
         print(out)
-        return True
-    return False
+        return title
+    return ""
 
 
-def monitor_program_is_started(previous_program_list: list, current_program_list: list) -> bool:
+def monitor_program_is_started(previous_program_list: list, current_program_list: list) -> str:
     # FIXME: ブラウザの場合、タブを変えるだけで開始、終了判定してしまう
     diff = set(current_program_list) - set(previous_program_list)
     if diff:
         title = list(diff)[0]  # 差分はひとつである前提
         out = get_log_string(title, "S")
         print(out)
-        return True
-    return False
+        return title
+    return ""
 
 
 def keep_logging(interval, skip_duplicate):
@@ -138,16 +138,33 @@ def keep_logging(interval, skip_duplicate):
     while True:
         log_active_window(interval, skip_duplicate)
 
-        # プログラムの起動と終了を検知
+        # プログラムの起動と終了を検知（これらは同時には起こらない）
         current_program_list = get_all_windows()
-        monitor_program_is_started(
+        started = monitor_program_is_started(
             previous_program_list=previous_program_list,
             current_program_list=current_program_list)
-        monitor_program_is_terminated(
+        terminated = monitor_program_is_terminated(
             previous_program_list=previous_program_list,
             current_program_list=current_program_list)
-        previous_program_list = current_program_list
 
+        if started:
+            title = started
+            state = "S"
+        elif terminated:
+            title = terminated
+            state = "T"
+        else:
+            previous_program_list = current_program_list
+            time.sleep(interval)
+            continue
+
+        out = get_log_string(title, state)
+        day = format_date(datetime.datetime.today())
+        with open(get_log_filename(day), "a", encoding="UTF-8", errors="ignore") as f:
+            f.write(out + "\n")
+            f.flush()
+
+        previous_program_list = current_program_list
         time.sleep(interval)
 
 
