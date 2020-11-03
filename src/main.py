@@ -26,6 +26,7 @@ def log_activity_to_file(previous_program_list, current_program_list,
         title = terminated
         state = "T"
         activity_log.print_to_file(title, state)
+        event_notification.set()
 
     if started:
         title = started
