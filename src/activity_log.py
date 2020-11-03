@@ -45,38 +45,25 @@ def set_old_activity(old_activity: str):
 
 def print_to_file(title: str, state: str):
     out = get_log_string(title, state)
+    print(out)
     day = format_date(datetime.datetime.today())
+
     with open(get_log_filename(day), "a", encoding="UTF-8", errors="ignore") as f:
         f.write(out + "\n")
         f.flush()
 
 
-def log_active_window(skip_duplicate):
+def get_title_of_active_window(skip_duplicate) -> str:
+    """skip_duplicate: trueの場合、
+    前回と同じアクティブウィンドウなら "" を返す
     """
-    check foreground window title and dump it into file.
-    output filename is generated from date.
-    Parameters
-    ----------
-    interval : int
-        interval of logging, in seconds.
-    skip_duplicate : boolean
-        select if duplicated title should be logged or not.
-        if this value is True, same title is not logged.
-    """
-    day = format_date(datetime.datetime.today())
     old = get_old_activity()
     title = get_active_window_title()
-    if title == "":
-        return
     if (skip_duplicate and title == old):
-        return
-    out = get_log_string(title, "A")
-    print(out)
+        return ""
 
-    with open(get_log_filename(day), "a", encoding="UTF-8", errors="ignore") as f:
-        f.write(out + "\n")
-        f.flush()
-        set_old_activity(title)
+    set_old_activity(title)
+    return title
 
 
 def get_all_windows() -> list:
@@ -123,8 +110,8 @@ def get_title_of_terminated_program(previous_program_list: list, current_program
     diff = set(previous_program_list) - set(current_program_list)
     if diff:
         title = list(diff)[0]  # 差分はひとつである前提
-        out = get_log_string(title, "T")
-        print(out)
+        # out = get_log_string(title, "T")
+        # print(out)
         return title
     return ""
 
@@ -134,8 +121,8 @@ def get_title_of_started_program(previous_program_list: list, current_program_li
     diff = set(current_program_list) - set(previous_program_list)
     if diff:
         title = list(diff)[0]  # 差分はひとつである前提
-        out = get_log_string(title, "S")
-        print(out)
+        # out = get_log_string(title, "S")
+        # print(out)
         return title
     return ""
 
@@ -167,7 +154,11 @@ def keep_logging(interval, skip_duplicate):
             print_to_file(title, state)
 
         # アクティブウィンドウの記録
-        log_active_window(skip_duplicate)
+        title = get_title_of_active_window(skip_duplicate)
+        state = "A"
+        if title:
+            print_to_file(title, state)
+
         previous_program_list = current_program_list
         time.sleep(interval)
 
