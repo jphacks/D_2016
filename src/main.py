@@ -4,6 +4,7 @@ import time
 import keyboard
 
 import activity_log
+import notification
 
 logging.basicConfig(level=logging.DEBUG, format='%(threadName)s: %(message)s')
 
@@ -76,7 +77,7 @@ def worker_notification(event_notification):
         event_notification.wait()
         event_notification.clear()
         logging.debug('notify start')
-        time.sleep(3)
+        notification.notify()
         logging.debug('notify end')
 
 
