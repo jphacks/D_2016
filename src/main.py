@@ -39,9 +39,9 @@ def worker_notification(event_notification):
         # event.set が実行されるまで待機
         event_notification.wait()
         event_notification.clear()
-        logging.debug('start')
+        logging.debug('notify start')
         time.sleep(3)
-        logging.debug('end')
+        logging.debug('notify end')
 
 
 def worker_main(event_log, event_voice, event_notification):
@@ -55,6 +55,7 @@ def worker_main(event_log, event_voice, event_notification):
             logging.debug("q is pressed, program end")
             exit()
             stop = True
+
         time.sleep(2)
         event_log.set()
         logging.debug("event_log.set()")
@@ -63,6 +64,11 @@ def worker_main(event_log, event_voice, event_notification):
         if need_to_play_voice:
             event_voice.set()
             logging.debug("event_voice.set()")
+
+        need_to_notify = keyboard.is_pressed("n")
+        if need_to_notify:
+            event_notification.set()
+            logging.debug("event_notification.set()")
 
 
 if __name__ == '__main__':
