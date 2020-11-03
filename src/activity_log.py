@@ -97,6 +97,7 @@ def get_all_windows() -> list:
                   "Program Manager",  # 強制終了やトラブルシューティングのために常駐
                   "Xbox Game bar",
                   'Virtual desktop switching preview',  # 仮想デスクトップ切り替え
+                  'タスクの切り替え',  # Alt+Tab
                   }
     # 重複、ブラックリストを省く
     titles = set(titles) - black_list
