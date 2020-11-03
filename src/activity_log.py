@@ -10,8 +10,16 @@ def get_active_window_title():
     return GetWindowText(GetForegroundWindow())
 
 
-def get_log_string(title):
-    return datetime.datetime.now().strftime('* %Y%m%d-%H:%M:%S `') + title + '`'
+def get_log_string(title: str, state: str = "A"):
+    """
+    ログ出力文字列を取得
+    - A: Active window
+    - S: プログラムが起動
+    - T: プログラムが終了
+    """
+    assert state in ("A", "S", "T"), "stateは、A, S, Tのいずれかを指定"
+    now = datetime.datetime.now().strftime('* %Y%m%d-%H:%M:%S `')
+    return state + ": " + now + title + '`'
 
 
 def format_date(date):
@@ -54,8 +62,8 @@ def log_active_window(interval, skip_duplicate):
         return
     if (skip_duplicate and title == old):
         return
-    out = get_log_string(title)
-    print("active_window: ", out)
+    out = get_log_string(title, "A")
+    print(out)
 
     with open(get_log_filename(day), "a", encoding="UTF-8", errors="ignore") as f:
         f.write(out + "\n")
