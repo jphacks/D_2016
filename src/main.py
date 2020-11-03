@@ -27,9 +27,9 @@ def worker_voice(event_voice):
         # event.set が実行されるまで待機
         event_voice.wait()
         event_voice.clear()
-        logging.debug('start')
-        time.sleep(3)
-        logging.debug('end')
+        logging.debug('voice start')
+        time.sleep(5)
+        logging.debug('voice end')
 
 
 def worker_notification(event_notification):
@@ -58,6 +58,11 @@ def worker_main(event_log, event_voice, event_notification):
         time.sleep(2)
         event_log.set()
         logging.debug("event_log.set()")
+
+        need_to_play_voice = keyboard.is_pressed("m")
+        if need_to_play_voice:
+            event_voice.set()
+            logging.debug("event_voice.set()")
 
 
 if __name__ == '__main__':
