@@ -15,9 +15,9 @@ def worker_log(event_log):
         # event.set が実行されるまで待機
         event_log.wait()
         event_log.clear()
-        logging.debug('start')
-        time.sleep(3)
-        logging.debug('end')
+        logging.debug('logging start')
+        time.sleep(0.5)
+        logging.debug('logging end')
 
 
 def worker_voice(event_voice):
@@ -55,8 +55,9 @@ def worker_main(event_log, event_voice, event_notification):
             logging.debug("q is pressed, program end")
             exit()
             stop = True
-        time.sleep(1)
-        logging.debug("1 sec")
+        time.sleep(2)
+        event_log.set()
+        logging.debug("event_log.set()")
 
 
 if __name__ == '__main__':
