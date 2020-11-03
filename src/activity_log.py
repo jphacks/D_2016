@@ -136,8 +136,6 @@ def keep_logging(interval, skip_duplicate):
     previous_program_list = get_all_windows()
 
     while True:
-        log_active_window(interval, skip_duplicate)
-
         # プログラムの起動と終了を検知（これらは同時には起こらない）
         current_program_list = get_all_windows()
         started = monitor_program_is_started(
@@ -154,16 +152,18 @@ def keep_logging(interval, skip_duplicate):
             title = terminated
             state = "T"
         else:
-            previous_program_list = current_program_list
-            time.sleep(interval)
-            continue
+            title = ""
+            state = ""
 
-        out = get_log_string(title, state)
-        day = format_date(datetime.datetime.today())
-        with open(get_log_filename(day), "a", encoding="UTF-8", errors="ignore") as f:
-            f.write(out + "\n")
-            f.flush()
+        if title:
+            out = get_log_string(title, state)
+            day = format_date(datetime.datetime.today())
+            with open(get_log_filename(day), "a", encoding="UTF-8", errors="ignore") as f:
+                f.write(out + "\n")
+                f.flush()
 
+        # アクティブウィンドウの記録
+        log_active_window(interval, skip_duplicate)
         previous_program_list = current_program_list
         time.sleep(interval)
 
