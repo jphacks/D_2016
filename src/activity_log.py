@@ -43,7 +43,15 @@ def set_old_activity(old_activity: str):
         f.write(old_activity)
 
 
-def log_active_window(interval, skip_duplicate):
+def print_to_file(title: str, state: str):
+    out = get_log_string(title, state)
+    day = format_date(datetime.datetime.today())
+    with open(get_log_filename(day), "a", encoding="UTF-8", errors="ignore") as f:
+        f.write(out + "\n")
+        f.flush()
+
+
+def log_active_window(skip_duplicate):
     """
     check foreground window title and dump it into file.
     output filename is generated from date.
@@ -110,7 +118,7 @@ def get_all_windows() -> list:
     return list(titles)
 
 
-def monitor_program_is_terminated(previous_program_list: list, current_program_list: list) -> str:
+def get_title_of_terminated_program(previous_program_list: list, current_program_list: list) -> str:
     # FIXME: ブラウザの場合、タブを変えるだけで開始、終了判定してしまう
     diff = set(previous_program_list) - set(current_program_list)
     if diff:
@@ -121,7 +129,7 @@ def monitor_program_is_terminated(previous_program_list: list, current_program_l
     return ""
 
 
-def monitor_program_is_started(previous_program_list: list, current_program_list: list) -> str:
+def get_title_of_started_program(previous_program_list: list, current_program_list: list) -> str:
     # FIXME: ブラウザの場合、タブを変えるだけで開始、終了判定してしまう
     diff = set(current_program_list) - set(previous_program_list)
     if diff:
@@ -138,10 +146,10 @@ def keep_logging(interval, skip_duplicate):
     while True:
         # プログラムの起動と終了を検知（これらは同時には起こらない）
         current_program_list = get_all_windows()
-        started = monitor_program_is_started(
+        started = get_title_of_started_program(
             previous_program_list=previous_program_list,
             current_program_list=current_program_list)
-        terminated = monitor_program_is_terminated(
+        terminated = get_title_of_terminated_program(
             previous_program_list=previous_program_list,
             current_program_list=current_program_list)
 
@@ -156,14 +164,10 @@ def keep_logging(interval, skip_duplicate):
             state = ""
 
         if title:
-            out = get_log_string(title, state)
-            day = format_date(datetime.datetime.today())
-            with open(get_log_filename(day), "a", encoding="UTF-8", errors="ignore") as f:
-                f.write(out + "\n")
-                f.flush()
+            print_to_file(title, state)
 
         # アクティブウィンドウの記録
-        log_active_window(interval, skip_duplicate)
+        log_active_window(skip_duplicate)
         previous_program_list = current_program_list
         time.sleep(interval)
 
