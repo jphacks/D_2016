@@ -92,7 +92,8 @@ def get_all_windows() -> list:
                   "設定",  # なぜか裏で動いてる
                   "映画 & テレビ",  # なぜかおる
                   "Program Manager",  # 強制終了やトラブルシューティングのために常駐
-                  "Xbox Game bar"
+                  "Xbox Game bar",
+                  'Virtual desktop switching preview',  # 仮想デスクトップ切り替え
                   }
     # 重複、ブラックリストを省く
     titles = set(titles) - black_list
