@@ -5,7 +5,7 @@ import keyboard
 
 import activity_log
 import notification
-import texttospeech
+import sound
 
 logging.basicConfig(level=logging.DEBUG, format='%(threadName)s: %(message)s')
 
@@ -69,7 +69,7 @@ def worker_voice(event_voice):
         event_voice.clear()
         logging.debug('voice start')
         time.sleep(3)
-        texttospeech.sound()
+        sound.play_sound()
         logging.debug('voice end')
 
 
@@ -101,12 +101,12 @@ def worker_main(event_log, event_voice, event_notification):
         event_log.set()
         logging.debug("event_log.set()")
 
-        need_to_play_voice = keyboard.is_pressed("m")
+        need_to_play_voice = sound.need_to_sound()
         if need_to_play_voice:
             event_voice.set()
             logging.debug("event_voice.set()")
 
-        need_to_notify = keyboard.is_pressed("n")
+        need_to_notify = notification.need_to_notify()
         if need_to_notify:
             event_notification.set()
             logging.debug("event_notification.set()")
