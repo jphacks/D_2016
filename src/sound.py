@@ -1,5 +1,7 @@
 import winsound
 
+import text_generator
+
 
 def play_sound():
     with open("test.wav", "rb") as f:
