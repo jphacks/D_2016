@@ -1,4 +1,4 @@
-import time
+import time,os
 import datetime
 from win32gui import GetWindowText, GetForegroundWindow
 
@@ -100,7 +100,18 @@ def get_all_windows() -> list:
                   'タスクの切り替え',  # Alt+Tab
                   }
     # 重複、ブラックリストを省く
-    titles = set(titles) - black_list
+    #titles = set(titles) - black_list
+
+    # ホワイトリストを表示する
+    white_list = [ ]
+    for file in os.listdir():
+        base, ext = os.path.splitext(file)
+        if ext == '.docx':
+            white_list.append(file + " - Word")
+    
+    #ホワイトリスト
+    titles = set(titles) & set(white_list)
+    
     # print("起動中プログラム一覧を取得しました")
     # print(*titles)
     return list(titles)
