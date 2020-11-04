@@ -1,1 +1,1 @@
-うんちたーみなる
+Anaconda Prompt (Anaconda3) - python  main.py
