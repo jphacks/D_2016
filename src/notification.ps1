@@ -19,8 +19,8 @@ Function Toast {
 
 #トーストテンプレート
 $src_name = "\mirai.gif"
-$txt = "こんにちは"
-
+Write-Host = $Args[0]
+$txt = $Args[0]
 $img_path = Join-Path $PSScriptRoot $src_name
 $template = @"
 <toast duration="1">
@@ -30,9 +30,9 @@ $template = @"
             <image placement="hero" src="$img_path"/>
         </binding>
     </visual>
-    <audio silent="false" src="ms-winsoundevent:Notification.Default" />
 </toast>
 "@
 
+#<audio silent="false" src="ms-appx:///Assets/NewMessage.mp3"/>
 Toast
 exit
