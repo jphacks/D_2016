@@ -1,26 +1,23 @@
 Function Toast {
-    #AppID’²‚×‚é:Get-StartApps
+    #AppIDèª¿ã¹ã‚‹:Get-StartApps
     $AppId = "{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe"
 
-    #ƒ[ƒhÏ‚İˆê——:[System.AppDomain]::CurrentDomain.GetAssemblies() | % { $_.GetName().Name }
-    #WinRTAPI‚ğŒÄ‚Ño‚·:[-Class-,-Namespace-,ContentType=WindowsRuntime]
+    #ãƒ­ãƒ¼ãƒ‰æ¸ˆã¿ä¸€è¦§:[System.AppDomain]::CurrentDomain.GetAssemblies() | % { $_.GetName().Name }
+    #WinRTAPIã‚’å‘¼ã³å‡ºã™:[-Class-,-Namespace-,ContentType=WindowsRuntime]
     $null = [Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime]
     $null = [Windows.Data.Xml.Dom.XmlDocument, Windows.Data.Xml.Dom.XmlDocument, ContentType = WindowsRuntime]
     
-    #XmlDocumentƒNƒ‰ƒX‚ğƒCƒ“ƒXƒ^ƒ“ƒX‰»
+    #XmlDocumentã‚¯ãƒ©ã‚¹ã‚’ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åŒ–
     $xml = New-Object Windows.Data.Xml.Dom.XmlDocument
-    #LoadXmlƒƒ\ƒbƒh‚ğŒÄ‚Ño‚µA•Ï”template‚ğWinRTŒ^‚Ìxml‚Æ‚µ‚Ä“Ç‚İ‚Ş
+    #LoadXmlãƒ¡ã‚½ãƒƒãƒ‰ã‚’å‘¼ã³å‡ºã—ã€å¤‰æ•°templateã‚’WinRTå‹ã®xmlã¨ã—ã¦èª­ã¿è¾¼ã‚€
     $xml.LoadXml($template)
 
-    #ToastNotificationƒNƒ‰ƒX‚ÌCreateToastNotifierƒƒ\ƒbƒh‚ğŒÄ‚Ño‚µA•Ï”xml‚ğƒg[ƒXƒg
+    #ToastNotificationã‚¯ãƒ©ã‚¹ã®CreateToastNotifierãƒ¡ã‚½ãƒƒãƒ‰ã‚’å‘¼ã³å‡ºã—ã€å¤‰æ•°xmlã‚’ãƒˆãƒ¼ã‚¹ãƒˆ
     [Windows.UI.Notifications.ToastNotificationManager]::CreateToastNotifier($AppId).Show($xml)
 }
 
 
-#ƒg[ƒXƒgƒeƒ“ƒvƒŒ[ƒg
-$src_name = "media\mirai.gif"
-$txt = "‚±‚ñ‚É‚¿‚Í"
-
+#ãƒˆãƒ¼ã‚¹ãƒˆãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
 $img_path = Join-Path $PSScriptRoot $src_name
 $template = @"
 <toast duration="1">
@@ -30,9 +27,9 @@ $template = @"
             <image placement="hero" src="$img_path"/>
         </binding>
     </visual>
-    <audio silent="false" src="ms-winsoundevent:Notification.Default" />
 </toast>
 "@
 
+#<audio silent="false" src="ms-appx:///Assets/NewMessage.mp3"/>
 Toast
 exit
