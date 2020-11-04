@@ -4,7 +4,8 @@ import win32com.client
 import text_generator
 
 
-def play_sound(txt):
+def play_sound():
+    txt = "小川さん、お疲れ様です"
     sapi = win32com.client.Dispatch("SAPI.SpVoice")
     cat  = win32com.client.Dispatch("SAPI.SpObjectTokenCategory")
     cat.SetID(r"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Voices", False)
@@ -23,5 +24,4 @@ def need_to_sound() -> bool:
 
 
 if __name__ == '__main__':
-    txt = "test"
-    play_sound(txt)
+    play_sound()
