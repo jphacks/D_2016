@@ -4,7 +4,7 @@ import text_generator
 
 
 def play_sound():
-    with open("test.wav", "rb") as f:
+    with open("media/test.wav", "rb") as f:
         data = f.read()
     winsound.PlaySound(data, winsound.SND_MEMORY)
 
