@@ -1,4 +1,5 @@
-import time,os
+import time
+import os
 import datetime
 from win32gui import GetWindowText, GetForegroundWindow
 
@@ -88,30 +89,16 @@ def get_all_windows() -> list:
         return True
     EnumWindows(EnumWindowsProc(foreach_window), 0)
 
-    # 以下のブラックリストは表示しない（これらは裏で常駐してるみたい）
-    # TODO: 随時追加していく
-    black_list = {"",
-                  "Microsoft Text Input Application",  # なにこれ
-                  "設定",  # なぜか裏で動いてる
-                  "映画 & テレビ",  # なぜかおる
-                  "Program Manager",  # 強制終了やトラブルシューティングのために常駐
-                  "Xbox Game bar",
-                  'Virtual desktop switching preview',  # 仮想デスクトップ切り替え
-                  'タスクの切り替え',  # Alt+Tab
-                  }
-    # 重複、ブラックリストを省く
-    #titles = set(titles) - black_list
-
     # ホワイトリストを表示する
-    white_list = [ ]
+    white_list = []
     for file in os.listdir():
         base, ext = os.path.splitext(file)
         if ext == '.docx':
             white_list.append(file + " - Word")
-    
-    #ホワイトリスト
+
+    # ホワイトリスト
     titles = set(titles) & set(white_list)
-    
+
     # print("起動中プログラム一覧を取得しました")
     # print(*titles)
     return list(titles)
