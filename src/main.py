@@ -79,11 +79,10 @@ def worker_voice(event_voice):
         event_voice.wait()
         event_voice.clear()
         logging.debug('voice start')
-        # time.sleep(3)
+        #time.sleep(3)
         text = text_generator.generate_text(working_state)
         sound.play_sound(text)
         logging.debug('voice end')
-
 
 def worker_notification(event_notification):
     """通知のためのworker
@@ -94,7 +93,8 @@ def worker_notification(event_notification):
         event_notification.clear()
         logging.debug('notify start')
         text = text_generator.generate_text(working_state)
-        notification.notify(text)
+        img_path = notification.generate_path(working_state)
+        notification.notify(text,img_path)
         logging.debug('notify end')
 
 

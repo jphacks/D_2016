@@ -4,7 +4,7 @@ def generate_text(event) -> str:
     
     if event == "start":
         txt = "今日もいちにち頑張りましょう!"
-        
+
     if event == "terminate":
         txt = count_docx.count_docx("test.docx")
         txt = str(txt) + "文字記載おつかれさまです"

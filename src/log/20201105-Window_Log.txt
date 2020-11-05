@@ -32,3 +32,94 @@ A, 20201105-19:46:19, test.docx - Word
 T, 20201105-19:46:25, test.docx - Word
 A, 20201105-19:46:25, Word
 A, 20201105-19:46:27, Anaconda Prompt (Anaconda3) - python  main.py
+A, 20201105-19:49:20, タスクの切り替え
+A, 20201105-19:49:26, 無題 - ペイント
+A, 20201105-19:49:28, エクスプローラー
+A, 20201105-19:49:31, デスクトップ
+A, 20201105-19:49:41, D_2016
+A, 20201105-19:49:43, src
+S, 20201105-19:49:47, test.docx - Word
+A, 20201105-19:49:47, test.docx - Word
+T, 20201105-19:49:51, test.docx - Word
+A, 20201105-19:49:51, src
+A, 20201105-19:49:53, Anaconda Prompt (Anaconda3) - python  main.py
+A, 20201105-19:50:03, Cortana
+A, 20201105-19:50:07, Windows シェル エクスペリエンス ホスト
+A, 20201105-19:50:13, アクション センター
+A, 20201105-19:50:19, Cortana
+A, 20201105-19:50:21, 設定
+A, 20201105-19:50:25, Anaconda Prompt (Anaconda3) - python  main.py
+S, 20201105-19:50:29, test.docx - Word
+A, 20201105-19:50:29, test.docx - Word
+T, 20201105-19:50:33, test.docx - Word
+A, 20201105-19:50:33, Word
+A, 20201105-19:50:35, src
+A, 20201105-19:50:41, タスクの切り替え
+A, 20201105-19:50:47, src
+A, 20201105-19:50:49, sound.py - Visual Studio Code
+A, 20201105-19:50:51, main.py - Visual Studio Code
+A, 20201105-19:51:09, タスクの切り替え
+A, 20201105-19:51:11, 起動しています - Word
+S, 20201105-19:51:13, test.docx - Word
+A, 20201105-19:51:13, test.docx - Word
+T, 20201105-19:51:15, test.docx - Word
+A, 20201105-19:51:15, Word
+A, 20201105-19:51:17, src
+A, 20201105-19:51:21, main.py - Visual Studio Code
+A, 20201105-19:51:27, Anaconda Prompt (Anaconda3) - python  main.py
+A, 20201105-20:16:42, タスクの切り替え
+A, 20201105-20:16:48, src
+A, 20201105-20:16:50, 起動しています - Word
+S, 20201105-20:16:52, test.docx - Word
+A, 20201105-20:16:52, test.docx - Word
+T, 20201105-20:16:58, test.docx - Word
+A, 20201105-20:16:58, Word
+A, 20201105-20:17:00, src
+A, 20201105-20:17:04, Anaconda Prompt (Anaconda3) - python  main.py
+A, 20201105-20:17:08, Cortana
+A, 20201105-20:17:12, 設定
+A, 20201105-20:17:18, タスクの切り替え
+A, 20201105-20:17:20, 起動しています - Word
+S, 20201105-20:17:22, test.docx - Word
+A, 20201105-20:17:22, test.docx - Word
+T, 20201105-20:17:28, test.docx - Word
+A, 20201105-20:17:28, src
+A, 20201105-20:17:34, media
+A, 20201105-20:17:38, タスクの切り替え
+A, 20201105-20:17:40, notification.ps1 - Visual Studio Code
+A, 20201105-20:17:44, notification.py - Visual Studio Code
+A, 20201105-20:17:49, media
+A, 20201105-20:17:51, notification.py - Visual Studio Code
+A, 20201105-20:17:53, タスクの切り替え
+A, 20201105-20:17:55, media
+A, 20201105-20:17:57, タスクの切り替え
+A, 20201105-20:17:59, notification.py - Visual Studio Code
+A, 20201105-20:18:11, main.py - Visual Studio Code
+A, 20201105-20:18:17, ● main.py - Visual Studio Code
+A, 20201105-20:18:41, notification.py - Visual Studio Code
+A, 20201105-20:18:43, ● main.py - Visual Studio Code
+A, 20201105-20:19:05, notification.py - Visual Studio Code
+A, 20201105-20:19:13, main.py - Visual Studio Code
+A, 20201105-20:19:15, media
+A, 20201105-20:19:25, src
+A, 20201105-20:19:29, 起動しています - Word
+S, 20201105-20:19:31, test.docx - Word
+A, 20201105-20:19:31, test.docx - Word
+A, 20201105-20:19:33, Microsoft Word
+T, 20201105-20:19:35, test.docx - Word
+A, 20201105-20:19:35, Word
+A, 20201105-20:19:37, src
+A, 20201105-20:19:43, アクション センター
+A, 20201105-20:19:49, タスクの切り替え
+A, 20201105-20:19:51, ミーティングコントロール
+A, 20201105-20:19:55, VideoFrameWnd
+A, 20201105-20:20:01, Anaconda Prompt (Anaconda3) - python  main.py
+A, 20201105-20:20:13, src
+S, 20201105-20:20:15, test.docx - Word
+A, 20201105-20:20:15, test.docx - Word
+T, 20201105-20:20:21, test.docx - Word
+A, 20201105-20:20:21, src
+A, 20201105-20:20:31, タスクの切り替え
+A, 20201105-20:20:33, main.py - Visual Studio Code
+A, 20201105-20:21:11, Zoom ミーティング
+A, 20201105-20:21:13, タスクの切り替え
