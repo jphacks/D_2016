@@ -38,7 +38,7 @@ def log_activity_to_file(previous_program_list, current_program_list,
         state = "T"
         activity_log.print_to_file(title, state)
         event_voice.set()
-        # event_notification.set()
+        event_notification.set()
 
     if started:
         working_state = "start"
@@ -93,7 +93,8 @@ def worker_notification(event_notification):
         event_notification.wait()
         event_notification.clear()
         logging.debug('notify start')
-        notification.notify()
+        text = text_generator.generate_text(working_state)
+        notification.notify(text)
         logging.debug('notify end')
 
 

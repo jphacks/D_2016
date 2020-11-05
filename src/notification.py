@@ -1,12 +1,9 @@
 import os
 import time
-import text_generator
 
 
-def notify():
+def notify(txt):
     path = "notification.ps1"
-    # TODO: 状態を渡すこと
-    txt = text_generator.generate_text("terminate")
     os.system('powershell -Command' + ' ' +
               'powershell -ExecutionPolicy RemoteSigned .\\' + path + " " + str(txt))
 
@@ -19,4 +16,4 @@ def need_to_notify() -> bool:
 
 
 if __name__ == "__main__":
-    notify()
+    notify("こんにちは")
