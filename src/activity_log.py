@@ -33,6 +33,10 @@ def get_log_filename(date):
     return "log/" + date + "-Window_Log.txt"
 
 
+def get_working_time_log_filename(date):
+    return "log/" + date + "-working_time_log.pkl"
+
+
 def get_old_activity() -> str:
     tmp_file_path = "log/tmp.txt"
     with open(tmp_file_path, "r", encoding="UTF-8", errors="ignore") as f:
@@ -164,7 +168,9 @@ def keep_logging(interval, skip_duplicate):
 
 
 def get_working_time_on_current_window(interval: int) -> int:
-    with open("log/working_time.pkl", "rb") as f:
+    day = format_date(datetime.datetime.today())
+    file_name = get_working_time_log_filename(day)
+    with open(file_name, "rb") as f:
         working_time_dict = pickle.load(f)
 
     current_window = get_active_window_title()
@@ -172,7 +178,7 @@ def get_working_time_on_current_window(interval: int) -> int:
     working_time += interval
     working_time_dict[current_window] = working_time
 
-    with open("log/working_time.pkl", 'wb') as f:
+    with open(file_name, 'wb') as f:
         pickle.dump(working_time_dict, f)
 
     return int(working_time)
@@ -195,9 +201,10 @@ def main():
     # 初回のみ実行
     # working_time_dict = defaultdict(int)
     # working_time_dict["init"] = 1
-    # with open("log/working_time.pkl", 'wb') as f:
+    # day = format_date(datetime.datetime.today())
+    # file_name = get_working_time_log_filename(day)
+    # with open(file_name, 'wb') as f:
     #     pickle.dump(working_time_dict, f)
-    # print(get_working_time_on_current_window(2))
 
     # 処理ループ
     keep_logging(args.interval, args.skip_duplicate)
