@@ -3,16 +3,19 @@ import docx
 def count_docx(read_path):
     
     doc= docx.Document(read_path)
-    txt = []
+    txts = []
     
     # ワードから文章を取得
     for par in doc.paragraphs:
-        txt.append(par.text)
+        txts.append(par.text)
     
-    n = len(txt[0])
-    #print("文章は「{}」で、".format(txt[0]))
-    #print("文字数は{}です".format(n))
-    return n 
+    total = 0
+    for txt in txts:
+        total += len(txt)
+    
+    #print("文章は「{}」で、".format(txts))
+    #print("文字数は{}です".format(total))
+    return total 
     
 if __name__ == '__main__':
     read_path = "test.docx"

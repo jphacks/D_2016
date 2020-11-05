@@ -123,3 +123,12 @@ A, 20201105-20:20:31, タスクの切り替え
 A, 20201105-20:20:33, main.py - Visual Studio Code
 A, 20201105-20:21:11, Zoom ミーティング
 A, 20201105-20:21:13, タスクの切り替え
+A, 20201105-20:37:39, src
+S, 20201105-20:37:41, test.docx - Word
+A, 20201105-20:37:41, test.docx - Word
+T, 20201105-20:37:59, test.docx - Word
+A, 20201105-20:37:59, Anaconda Prompt (Anaconda3) - python  main.py
+A, 20201105-20:38:03, タスクの切り替え
+A, 20201105-20:38:07, src
+A, 20201105-20:38:09, count_docx.py - Visual Studio Code
+A, 20201105-20:38:11, タスクの切り替え
