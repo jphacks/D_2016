@@ -6,14 +6,23 @@ import keyboard
 import activity_log
 import notification
 import sound
+import text_generator
 
 logging.basicConfig(level=logging.DEBUG, format='%(threadName)s: %(message)s')
 
 stop = False  # スレッドの終了用
+working_state_list = ["start",
+                      "terminate",
+                      "cheer",
+                      "praise",
+                      "idle"]
+working_state = "idle"
 
 
 def log_activity_to_file(previous_program_list, current_program_list,
                          skip_duplicate=True):
+    global working_state
+
     # プログラムの起動と終了を検知
     current_program_list = activity_log.get_all_windows()
     started = activity_log.get_title_of_started_program(
@@ -24,6 +33,7 @@ def log_activity_to_file(previous_program_list, current_program_list,
         current_program_list=current_program_list)
 
     if terminated:
+        working_state = "terminate"
         title = terminated
         state = "T"
         activity_log.print_to_file(title, state)
@@ -31,6 +41,7 @@ def log_activity_to_file(previous_program_list, current_program_list,
         event_notification.set()
 
     if started:
+        working_state = "start"
         title = started
         state = "S"
         activity_log.print_to_file(title, state)
@@ -68,8 +79,9 @@ def worker_voice(event_voice):
         event_voice.wait()
         event_voice.clear()
         logging.debug('voice start')
-        time.sleep(3)
-        sound.play_sound()
+        # time.sleep(3)
+        text = text_generator.generate_text(working_state)
+        sound.play_sound(text)
         logging.debug('voice end')
 
 
@@ -81,7 +93,8 @@ def worker_notification(event_notification):
         event_notification.wait()
         event_notification.clear()
         logging.debug('notify start')
-        notification.notify()
+        text = text_generator.generate_text(working_state)
+        notification.notify(text)
         logging.debug('notify end')
 
 
@@ -89,6 +102,8 @@ def worker_main(event_log, event_voice, event_notification):
     """処理の中心となるworker
     """
     global stop
+    global working_state
+
     logging.debug('start')
     print(stop)
     while not stop:
@@ -100,6 +115,7 @@ def worker_main(event_log, event_voice, event_notification):
         time.sleep(2)
         event_log.set()
         logging.debug("event_log.set()")
+        logging.debug("working_state: " + working_state)
 
         need_to_play_voice = sound.need_to_sound()
         if need_to_play_voice:
