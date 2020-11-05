@@ -184,7 +184,7 @@ def get_working_time_on_current_window(interval: int) -> int:
     current_window = get_active_window_title()
     working_time = working_time_dict[current_window]
     working_time += interval
-    working_time_dict[current_window] = working_time
+    working_time_dict[current_window] = int(working_time)
 
     with open(file_name, 'wb') as f:
         pickle.dump(working_time_dict, f)

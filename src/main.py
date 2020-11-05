@@ -11,6 +11,7 @@ import text_generator
 logging.basicConfig(level=logging.DEBUG, format='%(threadName)s: %(message)s')
 
 stop = False  # スレッドの終了用
+interval = 2  # 記録の間隔
 working_state_list = ["start",
                       "terminate",
                       "cheer",
@@ -48,6 +49,15 @@ def log_activity_to_file(previous_program_list, current_program_list,
         event_voice.set()
         event_notification.set()
 
+    working_time = activity_log.get_working_time_on_current_window(interval=2)
+    logging.debug("working_time: " + str(working_time))
+    thresholds = [3600 for _ in range(8)]  # 1～8時間
+    for threshold in thresholds:
+        if threshold <= working_time < threshold + interval:
+            working_state = "cheer"
+            event_voice.set()
+            event_notification.set()
+
     # アクティブウィンドウの記録
     title = activity_log.get_title_of_active_window(skip_duplicate)
     state = "A"
@@ -82,9 +92,10 @@ def worker_voice(event_voice):
         event_voice.clear()
         logging.debug('voice start')
         text = text_generator.generate_text(working_state)
-        #time.sleep(3)
+        # time.sleep(3)
         sound.play_sound(text)
         logging.debug('voice end')
+
 
 def worker_notification(event_notification):
     """通知のためのworker
@@ -96,7 +107,7 @@ def worker_notification(event_notification):
         logging.debug('notify start')
         text = text_generator.generate_text(working_state)
         img_path = notification.generate_path(working_state)
-        notification.notify(text,img_path)
+        notification.notify(text, img_path)
         logging.debug('notify end')
 
 
@@ -114,7 +125,7 @@ def worker_main(event_log, event_voice, event_notification):
             exit()
             stop = True
 
-        time.sleep(2)
+        time.sleep(interval)
         event_log.set()
         logging.debug("event_log.set()")
         logging.debug("working_state: " + working_state)
