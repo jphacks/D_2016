@@ -2,6 +2,8 @@ import time
 import os
 import datetime
 from win32gui import GetWindowText, GetForegroundWindow
+import pickle
+from collections import defaultdict
 
 # This code is based from
 # https://github.com/aikige/homeBinWin/blob/master/dumpForegroundWindow.py
@@ -29,6 +31,10 @@ def format_date(date):
 
 def get_log_filename(date):
     return "log/" + date + "-Window_Log.txt"
+
+
+def get_working_time_log_filename(date):
+    return "log/" + date + "-working_time_log.pkl"
 
 
 def get_old_activity() -> str:
@@ -155,8 +161,35 @@ def keep_logging(interval, skip_duplicate):
         if title:
             print_to_file(title, state)
 
+        print(get_working_time_on_current_window(2),
+              "[sec] on ", get_title_of_active_window(False))
         previous_program_list = current_program_list
         time.sleep(interval)
+
+
+def get_working_time_on_current_window(interval: int) -> int:
+    day = format_date(datetime.datetime.today())
+    file_name = get_working_time_log_filename(day)
+
+    # なければ作る
+    if not os.path.exists(file_name):
+        working_time_dict = defaultdict(int)
+        working_time_dict["init"] = 1
+        with open(file_name, 'wb') as f:
+            pickle.dump(working_time_dict, f)
+
+    with open(file_name, "rb") as f:
+        working_time_dict = pickle.load(f)
+
+    current_window = get_active_window_title()
+    working_time = working_time_dict[current_window]
+    working_time += interval
+    working_time_dict[current_window] = working_time
+
+    with open(file_name, 'wb') as f:
+        pickle.dump(working_time_dict, f)
+
+    return int(working_time)
 
 
 def main():

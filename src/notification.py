@@ -1,11 +1,31 @@
 import os
 import time
 
+def generate_path(event) -> str:
+    
+    if event == "start":
+        path = "startup_300px.gif"
+    
+    if event == "terminate":
+        path = "ending_300px.gif"
+    
+    if event == "cheer":
+        path = "breaktime_300px.gif"
+    
+    if event == "praise":
+        path = "mirai.gif"
+    
+    if event == None:
+        path = "mirai.gif"
+    
+    return path
 
-def notify(txt):
+
+def notify(txt,img_path):
     path = "notification.ps1"
+    
     os.system('powershell -Command' + ' ' +
-              'powershell -ExecutionPolicy RemoteSigned .\\' + path + " " + str(txt))
+              'powershell -ExecutionPolicy RemoteSigned .\\' + path + " " + str(txt) +" "+ img_path)
 
 
 def need_to_notify() -> bool:
@@ -16,4 +36,4 @@ def need_to_notify() -> bool:
 
 
 if __name__ == "__main__":
-    notify("こんにちは")
+    notify("こんにちは","startup_300px.gif")

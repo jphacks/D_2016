@@ -18,7 +18,13 @@ Function Toast {
 
 
 #トーストテンプレート
-$img_path = Join-Path $PSScriptRoot $src_name
+$src_name = "mirai.gif"
+Write-Host = $Args[0] 
+Write-Host = $Args[1] 
+$src_name = $Args[1]
+$txt = $Args[0]
+$img_path = Join-Path $PSScriptRoot "media" 
+$img_path = Join-Path $img_path $src_name
 $template = @"
 <toast duration="1">
     <visual>

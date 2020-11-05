@@ -15,9 +15,10 @@ def play_sound(txt):
          == "Microsoft Sayaka"]
     if v:
         oldv = sapi.Voice
-        sapi.Voice = v[0]
+        #sapi.Voice = v[0]
+        sapi.SetVoice(v[0])
         sapi.Speak(txt)
-        sapi.Voice = oldv
+        #sapi.Voice = oldv
 
     pythoncom.CoUninitialize()
 
