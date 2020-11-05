@@ -11,22 +11,24 @@ def add_to_startup(file_path: str):
 
     USER_NAME = getpass.getuser()
     assert os.path.exists(file_path), "指定されたfile_pathがありません: " + file_path
-    file_path = os.path.abspath(file_path)  # 絶対パス
+    abs_file_path = os.path.abspath(file_path)  # 絶対パス
+    src_path = os.path.dirname(abs_file_path)
     bat_path = r'C:\Users\{}\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup'.format(
         USER_NAME)
     # print(bat_path)
-    with open("komati.bat", "w+") as bat_file:
-        text = "cd " + os.path.dirname(file_path) + "\n"
+    with open(bat_path + '\\'"komati.bat", "w+") as bat_file:
+        text = "cd " + os.path.dirname(abs_file_path) + "\n"
         text += 'python {}\n'.format(file_path)
         text += ""
         bat_file.write(text)
 
-    with open(bat_path + '\\' + "komati_no_window.vbs", "w+") as vbs_file:
-        text = 'Set ws = CreateObject("Wscript.Shell")' + "\n"
-        src_path = os.path.dirname(file_path)
-        text += 'ws.run "cmd /c {}/komati.bat", vbhid'.format(src_path) + "\n"
-        text += ""
-        vbs_file.write(text)
+    # 黒画面を出さない
+    # with open(bat_path + '\\' + "komati_no_window.vbs", "w+") as vbs_file:
+    #     text = 'Set ws = CreateObject("Wscript.Shell")' + "\n"
+    #     text += 'ws.CurrentDirectory = "{}"'.format(src_path) + "\n"
+    #     text += 'ws.run "cmd /c /komati.bat", vbhid' + "\n"
+    #     text += ""
+    #     vbs_file.write(text)
     print(file_path + " をスタートアップに登録しました")
 
 
