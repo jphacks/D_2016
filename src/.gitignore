@@ -1,0 +1,11 @@
+# txtを無視する
+*.txt
+
+# pycを無視する
+*.pyc
+
+# docxを無視する
+*.docx
+
+# __pycacheを無視する
+*.pyc
