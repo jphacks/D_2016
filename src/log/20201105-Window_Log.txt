@@ -132,3 +132,60 @@ A, 20201105-20:38:03, タスクの切り替え
 A, 20201105-20:38:07, src
 A, 20201105-20:38:09, count_docx.py - Visual Studio Code
 A, 20201105-20:38:11, タスクの切り替え
+A, 20201105-20:54:48, notification.ps1 - Visual Studio Code
+A, 20201105-20:54:52, タスクの切り替え
+A, 20201105-20:54:54, src
+A, 20201105-20:54:56, 起動しています - Word
+S, 20201105-20:54:58, test.docx - Word
+A, 20201105-20:54:58, test.docx - Word
+T, 20201105-20:55:02, test.docx - Word
+A, 20201105-20:55:02, main.py - Visual Studio Code
+A, 20201105-20:56:00, ● main.py - Visual Studio Code
+A, 20201105-20:56:14, main.py - Visual Studio Code
+A, 20201105-20:56:18, ● main.py - Visual Studio Code
+A, 20201105-20:56:22, main.py - Visual Studio Code
+A, 20201105-20:56:24, ● main.py - Visual Studio Code
+A, 20201105-20:56:26, main.py - Visual Studio Code
+A, 20201105-20:56:40, notification.py - Visual Studio Code
+A, 20201105-20:56:42, notification.ps1 - Visual Studio Code
+A, 20201105-20:56:46, ● notification.ps1 - Visual Studio Code
+A, 20201105-20:56:52, notification.ps1 - Visual Studio Code
+A, 20201105-20:56:54, Anaconda Prompt (Anaconda3) - python  main.py
+A, 20201105-20:57:14, タスクの切り替え
+A, 20201105-20:57:16, notification.ps1 - Visual Studio Code
+A, 20201105-20:57:20, src
+S, 20201105-20:57:22, test.docx - Word
+A, 20201105-20:57:22, test.docx - Word
+A, 20201105-20:57:26, Microsoft Word
+T, 20201105-20:57:28, test.docx - Word
+A, 20201105-20:57:28, src
+A, 20201105-20:57:30, notification.ps1 - Visual Studio Code
+A, 20201105-20:57:32, ● notification.ps1 - Visual Studio Code
+A, 20201105-20:57:34, notification.ps1 - Visual Studio Code
+A, 20201105-20:57:42, main.py - Visual Studio Code
+A, 20201105-20:57:48, タスクの切り替え
+A, 20201105-20:57:56, src
+S, 20201105-20:57:58, test.docx - Word
+A, 20201105-20:57:58, test.docx - Word
+T, 20201105-20:58:04, test.docx - Word
+A, 20201105-20:58:04, Word
+A, 20201105-20:58:06, src
+A, 20201105-20:58:14, タスクの切り替え
+A, 20201105-20:58:16, notification.ps1 - Visual Studio Code
+A, 20201105-20:58:18, ● notification.ps1 - Visual Studio Code
+A, 20201105-20:58:22, notification.ps1 - Visual Studio Code
+A, 20201105-20:58:24, ● notification.ps1 - Visual Studio Code
+A, 20201105-20:58:26, notification.ps1 - Visual Studio Code
+A, 20201105-20:58:32, main.py - Visual Studio Code
+A, 20201105-20:58:46, text_generator.py - Visual Studio Code
+A, 20201105-20:58:54, main.py - Visual Studio Code
+A, 20201105-20:59:33, ● main.py - Visual Studio Code
+A, 20201105-20:59:35, main.py - Visual Studio Code
+A, 20201105-20:59:55, Cortana
+A, 20201105-21:00:18, src
+S, 20201105-21:00:20, test.docx - Word
+A, 20201105-21:00:20, test.docx - Word
+A, 20201105-21:00:24, src
+A, 20201105-21:00:26, test.docx - Word
+T, 20201105-21:00:36, test.docx - Word
+A, 20201105-21:00:36, src
