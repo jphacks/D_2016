@@ -49,6 +49,12 @@ def log_activity_to_file(previous_program_list, current_program_list,
 
     working_time = activity_log.get_working_time_on_current_window(interval=2)
     logging.debug("working_time: " + str(working_time))
+    thresholds = [3600 for _ in range(8)]  # 1～8時間
+    for threshold in thresholds:
+        if threshold <= working_time < threshold + interval:
+            working_state = "cheer"
+            event_voice.set()
+            event_notification.set()
 
     # アクティブウィンドウの記録
     title = activity_log.get_title_of_active_window(skip_duplicate)
