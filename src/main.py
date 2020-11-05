@@ -36,8 +36,8 @@ def log_activity_to_file(previous_program_list, current_program_list,
         title = terminated
         state = "T"
         activity_log.print_to_file(title, state)
-        # event_voice.set()
-        event_notification.set()
+        event_voice.set()
+        # event_notification.set()
 
     if started:
         working_state = "start"
@@ -79,7 +79,7 @@ def worker_voice(event_voice):
         event_voice.clear()
         logging.debug('voice start')
         time.sleep(3)
-        sound.play_sound()
+        sound.play_sound("あ")
         logging.debug('voice end')
 
 
