@@ -170,6 +170,14 @@ def keep_logging(interval, skip_duplicate):
 def get_working_time_on_current_window(interval: int) -> int:
     day = format_date(datetime.datetime.today())
     file_name = get_working_time_log_filename(day)
+
+    # なければ作る
+    if not os.path.exists(file_name):
+        working_time_dict = defaultdict(int)
+        working_time_dict["init"] = 1
+        with open(file_name, 'wb') as f:
+            pickle.dump(working_time_dict, f)
+
     with open(file_name, "rb") as f:
         working_time_dict = pickle.load(f)
 
@@ -197,14 +205,6 @@ def main():
                         action='store_true',
                         default=True)
     args = parser.parse_args()
-
-    # 初回のみ実行
-    # working_time_dict = defaultdict(int)
-    # working_time_dict["init"] = 1
-    # day = format_date(datetime.datetime.today())
-    # file_name = get_working_time_log_filename(day)
-    # with open(file_name, 'wb') as f:
-    #     pickle.dump(working_time_dict, f)
 
     # 処理ループ
     keep_logging(args.interval, args.skip_duplicate)
