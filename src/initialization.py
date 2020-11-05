@@ -18,8 +18,7 @@ def add_to_startup(file_path: str):
     # print(bat_path)
     with open(bat_path + '\\'"komati.bat", "w+") as bat_file:
         text = "cd " + os.path.dirname(abs_file_path) + "\n"
-        text += 'python {}\n'.format(file_path)
-        text += ""
+        text += 'python {}'.format(file_path)
         bat_file.write(text)
 
     # 黒画面を出さない
