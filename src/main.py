@@ -6,6 +6,7 @@ import keyboard
 import activity_log
 import notification
 import sound
+import text_generator
 
 logging.basicConfig(level=logging.DEBUG, format='%(threadName)s: %(message)s')
 
@@ -78,8 +79,9 @@ def worker_voice(event_voice):
         event_voice.wait()
         event_voice.clear()
         logging.debug('voice start')
-        time.sleep(3)
-        sound.play_sound("あ")
+        # time.sleep(3)
+        text = text_generator.generate_text(working_state)
+        sound.play_sound(text)
         logging.debug('voice end')
 
 
