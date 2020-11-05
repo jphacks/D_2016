@@ -1,0 +1,34 @@
+A, 20201105-19:33:25, Cortana
+A, 20201105-19:33:29, Anaconda Prompt (Anaconda3) - python  main.py
+A, 20201105-19:33:31, タスクの切り替え
+A, 20201105-19:33:33, jphack2020
+A, 20201105-19:33:37, D_2016
+A, 20201105-19:33:39, src
+A, 20201105-19:33:41, 起動しています - Word
+S, 20201105-19:33:43, test.docx - Word
+A, 20201105-19:33:43, test.docx - Word
+T, 20201105-19:33:45, test.docx - Word
+A, 20201105-19:33:45, Word
+A, 20201105-19:33:53, タスクの切り替え
+A, 20201105-19:33:55, Slack | d_2016 | JPHACKS2020
+A, 20201105-19:34:03, タスクの切り替え
+A, 20201105-19:34:05, src
+A, 20201105-19:34:19, src
+A, 20201105-19:34:23, notification.ps1 - Visual Studio Code
+A, 20201105-19:34:41, ● notification.ps1 - Visual Studio Code
+A, 20201105-19:34:47, タスクの切り替え
+A, 20201105-19:41:16, code
+A, 20201105-19:41:20, 起動しています - Word
+S, 20201105-19:41:22, test.docx - Word
+A, 20201105-19:41:22, タスクの切り替え
+A, 20201105-19:41:24, test.docx - Word
+T, 20201105-19:41:28, test.docx - Word
+A, 20201105-19:41:28, code
+A, 20201105-19:41:30, Anaconda Prompt (Anaconda3) - python  main.py
+A, 20201105-19:42:19, Anaconda Prompt (Anaconda3) - python  main.py
+A, 20201105-19:46:17, src
+S, 20201105-19:46:19, test.docx - Word
+A, 20201105-19:46:19, test.docx - Word
+T, 20201105-19:46:25, test.docx - Word
+A, 20201105-19:46:25, Word
+A, 20201105-19:46:27, Anaconda Prompt (Anaconda3) - python  main.py
