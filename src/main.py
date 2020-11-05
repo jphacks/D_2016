@@ -46,6 +46,8 @@ def log_activity_to_file(previous_program_list, current_program_list,
         title = started
         state = "S"
         activity_log.print_to_file(title, state)
+        event_voice.set()
+        event_notification.set()
 
     working_time = activity_log.get_working_time_on_current_window(interval=2)
     logging.debug("working_time: " + str(working_time))
@@ -89,8 +91,8 @@ def worker_voice(event_voice):
         event_voice.wait()
         event_voice.clear()
         logging.debug('voice start')
-        # time.sleep(3)
         text = text_generator.generate_text(working_state)
+        # time.sleep(3)
         sound.play_sound(text)
         logging.debug('voice end')
 

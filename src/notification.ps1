@@ -26,7 +26,7 @@ $txt = $Args[0]
 $img_path = Join-Path $PSScriptRoot "media" 
 $img_path = Join-Path $img_path $src_name
 $template = @"
-<toast duration="1">
+<toast duration="5">
     <visual>
         <binding template="ToastGeneric">
             <text> $txt </text>
