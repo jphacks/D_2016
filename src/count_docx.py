@@ -10,9 +10,10 @@ def count_docx(read_path):
         txt.append(par.text)
     
     n = len(txt[0])
-    print("文章は「{}」で、".format(txt[0]))
-    print("文字数は{}です".format(n))
-
+    #print("文章は「{}」で、".format(txt[0]))
+    #print("文字数は{}です".format(n))
+    return n 
+    
 if __name__ == '__main__':
     read_path = "test.docx"
     count_docx(read_path)

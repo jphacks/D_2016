@@ -68,3 +68,26 @@ T, 20201104-12:16:10, test.docx - Word
 A, 20201104-12:16:10, src
 A, 20201104-12:16:14, タスクの切り替え
 A, 20201104-12:16:16, Anaconda Prompt (Anaconda3) - python  main.py
+A, 20201104-20:18:44, タスクの切り替え
+A, 20201104-20:18:46, src
+A, 20201104-20:18:48, 起動しています - Word
+S, 20201104-20:18:50, test.docx - Word
+A, 20201104-20:18:50, test.docx - Word
+A, 20201104-20:18:52, タスクの切り替え
+T, 20201104-20:18:54, test.docx - Word
+A, 20201104-20:18:54, Word
+A, 20201104-20:18:56, Anaconda Prompt (Anaconda3) - python  main.py
+A, 20201104-20:19:02, Anaconda Prompt (Anaconda3) - python  main.py
+A, 20201104-21:08:53, Zoom ミーティング
+A, 20201104-21:09:45, タスクの切り替え
+A, 20201104-21:09:47, src
+A, 20201104-21:09:51, タスクの切り替え
+A, 20201104-21:09:59, src
+A, 20201104-21:10:03, 起動しています - Word
+S, 20201104-21:10:05, test.docx - Word
+A, 20201104-21:10:05, test.docx - Word
+T, 20201104-21:10:07, test.docx - Word
+A, 20201104-21:10:07, Word
+A, 20201104-21:10:09, src
+A, 20201104-21:10:13, タスクの切り替え
+A, 20201104-21:10:15, Anaconda Prompt (Anaconda3) - python  main.py

@@ -1,13 +1,19 @@
 import winsound
-
+import win32com.client
+# 自前ライブラリ
 import text_generator
 
 
-def play_sound():
-    with open("media/test.wav", "rb") as f:
-        data = f.read()
-    winsound.PlaySound(data, winsound.SND_MEMORY)
-
+def play_sound(txt):
+    sapi = win32com.client.Dispatch("SAPI.SpVoice")
+    cat  = win32com.client.Dispatch("SAPI.SpObjectTokenCategory")
+    cat.SetID(r"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Voices", False)
+    v = [t for t in cat.EnumerateTokens() if t.GetAttribute("Name") == "Microsoft Sayaka"]
+    if v:
+        oldv = sapi.Voice
+        sapi.Voice = v[0]
+        sapi.Speak(txt)
+        sapi.Voice = oldv
 
 def need_to_sound() -> bool:
     """通知を送る条件を満たす場合True、ほかはFalse
