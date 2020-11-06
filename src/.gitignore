@@ -16,6 +16,9 @@
 # batを無視する
 *.bat
 
+# config.pyを無視
+/config.py
+
 # 既にadd/commitされたファイルは、該当ディレクトリにて、
 # git rm --cached ファイル名 
 # でキャッシュを削除する必要がある
