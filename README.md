@@ -1,6 +1,6 @@
 ### モチベーション向上ソフト
 # -はかどり小町ちゃん-
-[![IMAGE ALT TEXT HERE](https://github.com/jphacks/D_2016/blob/master/thumbnail.png)](https://www.youtube.com/watch?v=G5rULR53uMk)
+[![IMAGE ALT TEXT HERE](https://github.com/jphacks/D_2016/blob/master/thumbnail.png)](https://youtu.be/Uf1ds6uwA78)
 
 
 ## 製品概要
