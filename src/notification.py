@@ -30,12 +30,14 @@ def need_to_notify(s_num,f_num):
     """通知を送る条件を満たす場合True、ほかはFalse
     """
     # TODO: 通知が必要な条件を記入
-    if int(f_num) - int(s_num) > 100:
+    if s_num == -1:
+        return False
+    elif int(f_num) - int(s_num) > 100:
         return 0
-    elif int(f_num) - int(s_num) <= 100 and int(f_num) - int(s_num) > 0:
+    elif int(f_num) - int(s_num) <= 100 and int(f_num) - int(s_num) >= 0:
         return 1
     else:
         return False
-
+        
 if __name__ == "__main__":
     notify("こんにちは","startup_300px.gif")

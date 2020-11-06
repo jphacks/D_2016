@@ -44,7 +44,6 @@ def log_activity_to_file(previous_program_list, current_program_list,
         if need_to_notify == 0:
             event_notification.set()
             event_voice.set()
-        
         elif need_to_notify == 1:
             working_state = "cheer"
             event_notification.set()
@@ -147,7 +146,7 @@ def worker_main(event_log, event_voice, event_notification):
             event_voice.set()
             logging.debug("event_voice.set()")
 
-        need_to_notify = notification.need_to_notify(0,0)
+        need_to_notify = notification.need_to_notify(-1,-1)
         if need_to_notify:
             event_notification.set()
             logging.debug("event_notification.set()")
