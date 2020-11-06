@@ -1,7 +1,6 @@
 import docx
 
 def count_docx(read_path):
-    
     doc= docx.Document(read_path)
     txts = []
     

@@ -38,14 +38,26 @@ def log_activity_to_file(previous_program_list, current_program_list,
         title = terminated
         state = "T"
         activity_log.print_to_file(title, state)
-        event_voice.set()
-        event_notification.set()
+        start_word_num = activity_log.get_start_word_num()
+        finish_word_num = activity_log.get_finish_word_num(title.split()[0])
+        need_to_notify = notification.need_to_notify(start_word_num,finish_word_num)
+        if need_to_notify == 0:
+            event_notification.set()
+            event_voice.set()
+        
+        elif need_to_notify == 1:
+            working_state = "cheer"
+            event_notification.set()
+            event_voice.set()
+        
+        need_to_notify = False
 
     if started:
         working_state = "start"
         title = started
         state = "S"
         activity_log.print_to_file(title, state)
+        activity_log.set_start_word_num(title.split()[0])
         event_voice.set()
         event_notification.set()
 
@@ -135,8 +147,7 @@ def worker_main(event_log, event_voice, event_notification):
             event_voice.set()
             logging.debug("event_voice.set()")
 
-        need_to_notify = notification.need_to_notify()
-        
+        need_to_notify = notification.need_to_notify(0,0)
         if need_to_notify:
             event_notification.set()
             logging.debug("event_notification.set()")
