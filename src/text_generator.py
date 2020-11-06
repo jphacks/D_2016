@@ -19,9 +19,9 @@ def generate_text(event) -> str:
         now = datetime.datetime.now()
         now_hour =now.hour
         
-        if 6 < now_hour <11:
+        if 6 <= now_hour <= 11:
             txt = "おはようございます。今日もいちにち頑張りましょう!"
-        elif  (0 < now_hour < 3) or (21 < now_hour < 23):
+        elif  (0 <= now_hour <= 3) or (21 <= now_hour <= 23):
             txt = "夜遅くまでお疲れ様です。"
         else:
             txt = "今日もいちにち頑張りましょう!"

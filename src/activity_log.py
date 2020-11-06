@@ -26,7 +26,7 @@ def get_previous_saved_time() -> float:
 def get_start_word_num() -> int:
     file_name = "log/start_word_num.pkl"
     if not os.path.exists(file_name):
-        title = activity_log.get_active_window_title()
+        title = get_active_window_title()
         set_start_word_num(title.split()[0])    
     with open(file_name, "rb") as f:
         count_docx_dict = pickle.load(f)
