@@ -189,3 +189,198 @@ A, 20201105-21:00:24, src
 A, 20201105-21:00:26, test.docx - Word
 T, 20201105-21:00:36, test.docx - Word
 A, 20201105-21:00:36, src
+A, 20201105-21:07:25, Anaconda Prompt (Anaconda3) - python  activity_log.py
+A, 20201105-21:29:28, Zoom ミーティング
+A, 20201105-21:29:34, エクスプローラー
+A, 20201105-21:29:40, src
+S, 20201105-21:29:44, test.docx - Word
+A, 20201105-21:29:44, test.docx - Word
+T, 20201105-21:29:52, test.docx - Word
+A, 20201105-21:29:52, src
+A, 20201105-21:29:56, Zoom ミーティング
+A, 20201105-21:29:58, タスクの切り替え
+A, 20201105-22:24:32, src
+A, 20201105-22:24:34, 起動しています - Word
+S, 20201105-22:24:36, test.docx - Word
+A, 20201105-22:24:36, test.docx - Word
+A, 20201105-22:24:40, Microsoft Word
+T, 20201105-22:24:42, test.docx - Word
+A, 20201105-22:24:42, src
+A, 20201105-22:24:44, Anaconda Prompt (Anaconda3) - python  main.py
+A, 20201105-22:40:26, src
+A, 20201105-22:40:28, 起動しています - Word
+S, 20201105-22:40:30, test.docx - Word
+A, 20201105-22:40:30, test.docx - Word
+A, 20201105-22:40:32, Anaconda Prompt (Anaconda3) - python  main.py
+A, 20201105-22:40:36, test.docx - Word
+A, 20201105-22:40:38, Anaconda Prompt (Anaconda3) - python  main.py
+A, 20201105-22:40:40, test.docx - Word
+T, 20201105-22:40:42, test.docx - Word
+A, 20201105-22:40:42, Anaconda Prompt (Anaconda3) - python  main.py
+A, 20201105-23:09:42, タスクの切り替え
+A, 20201105-23:09:46, learning_sprint
+A, 20201105-23:09:48, jphack2020
+A, 20201105-23:09:50, D_2016
+A, 20201105-23:09:52, src
+A, 20201105-23:09:54, main.py - Visual Studio Code
+A, 20201105-23:09:58, src
+A, 20201105-23:10:00, 起動しています - Word
+S, 20201105-23:10:02, test.docx - Word
+A, 20201105-23:10:02, test.docx - Word
+A, 20201105-23:10:04, src
+A, 20201105-23:10:06, main.py - Visual Studio Code
+A, 20201105-23:10:08, Anaconda Prompt (Anaconda3) - python  main.py
+A, 20201105-23:10:10, Zoom ミーティング
+A, 20201105-23:14:19, test.docx - Word
+A, 20201105-23:14:21, Zoom ミーティング
+A, 20201105-23:14:23, Anaconda Prompt (Anaconda3) - python  main.py
+A, 20201105-23:23:37, test.docx - Word
+A, 20201105-23:23:41, Anaconda Prompt (Anaconda3) - python  main.py
+A, 20201105-23:23:45, main.py - Visual Studio Code
+A, 20201105-23:23:47, Zoom ミーティング
+A, 20201105-23:23:51, main.py - Visual Studio Code
+A, 20201105-23:23:59, ● main.py - Visual Studio Code
+A, 20201105-23:24:01, activity_log.py - Visual Studio Code
+A, 20201105-23:24:05, タスクの切り替え
+A, 20201105-23:24:07, Zoom ミーティング
+A, 20201105-23:27:59, タスクの切り替え
+A, 20201105-23:28:03, JPHACKS2020_learning_sprint_day5.pdf - プロファイル 1 - Microsoft​ Edge
+A, 20201105-23:28:07, タスクの切り替え
+A, 20201105-23:28:11, jphacks/D_2016 - Google Chrome
+A, 20201105-23:28:13, Slack | d_2016 | JPHACKS2020
+A, 20201105-23:28:17, Slack | 廖　思超 | TechXXX
+A, 20201105-23:28:27, タスクの切り替え
+A, 20201105-23:28:29, Zoom ミーティング
+A, 20201105-23:30:00, ビデオ レイアウト
+A, 20201105-23:30:02, VideoFrameWnd
+A, 20201105-23:34:04, タスクの切り替え
+A, 20201105-23:34:14, VideoFrameWnd
+A, 20201105-23:34:16, jphacks/D_2016 - Google Chrome
+A, 20201105-23:34:18, タスクの切り替え
+A, 20201105-23:34:22, Slack | 廖　思超 | TechXXX
+A, 20201105-23:34:24, Slack
+A, 20201105-23:34:26, Slack | d_2016 | JPHACKS2020
+A, 20201105-23:34:28, タスクの切り替え
+A, 20201105-23:34:30, VideoFrameWnd
+A, 20201105-23:37:29, タスクの切り替え
+A, 20201105-23:37:31, エレベーターピッチ JPHACKS - Google 検索 - Google Chrome
+A, 20201105-23:37:33, 新しいタブ - Google Chrome
+A, 20201105-23:37:35, タスクの切り替え
+A, 20201105-23:37:37, 新しいタブ - Google Chrome
+A, 20201105-23:37:57, コンシェルジュ - Google 検索 - Google Chrome
+A, 20201105-23:38:01, タスクの切り替え
+A, 20201105-23:38:07, コンシェルジュ - Google 検索 - Google Chrome
+A, 20201105-23:38:09, d_2016, Online Whiteboard for Visual Collaboration - Google Chrome
+A, 20201105-23:38:41, コンシェルジュ - Google 検索 - Google Chrome
+A, 20201105-23:38:49, VideoFrameWnd
+A, 20201105-23:40:19, タスクの切り替え
+A, 20201105-23:40:21, VideoFrameWnd
+A, 20201105-23:40:23, コンシェルジュ - Google 検索 - Google Chrome
+A, 20201105-23:40:25, d_2016, Online Whiteboard for Visual Collaboration - Google Chrome
+A, 20201105-23:40:45, コンシェルジュ - Google 検索 - Google Chrome
+A, 20201105-23:40:57, 支える人 - Google 検索 - Google Chrome
+A, 20201105-23:41:12, 支える人 英語 - Google 検索 - Google Chrome
+A, 20201105-23:41:18, d_2016, Online Whiteboard for Visual Collaboration - Google Chrome
+A, 20201105-23:41:22, 名前を付けて保存
+A, 20201105-23:41:24, d_2016, Online Whiteboard for Visual Collaboration - Google Chrome
+A, 20201105-23:41:34, 支える人 英語 - Google 検索 - Google Chrome
+A, 20201105-23:41:52, リベロ - Google 検索 - Google Chrome
+A, 20201105-23:41:56, 支える人 英語 - Google 検索 - Google Chrome
+A, 20201105-23:42:00, d_2016, Online Whiteboard for Visual Collaboration - Google Chrome
+A, 20201105-23:42:20, 支える人 英語 - Google 検索 - Google Chrome
+A, 20201105-23:42:34, d_2016, Online Whiteboard for Visual Collaboration - Google Chrome
+A, 20201105-23:42:42, 支える人 英語 - Google 検索 - Google Chrome
+A, 20201105-23:42:52, https://eikaiwa.dmm.com/uknow/questions/74686/ - Google Chrome
+A, 20201105-23:42:54, 最も近くで支える人って英語でなんて言うの？ - DMM英会話なんてuKnow? - Google Chrome
+A, 20201105-23:43:02, d_2016, Online Whiteboard for Visual Collaboration - Google Chrome
+A, 20201105-23:44:24, 最も近くで支える人って英語でなんて言うの？ - DMM英会話なんてuKnow? - Google Chrome
+A, 20201105-23:44:26, 支える人 英語 - Google 検索 - Google Chrome
+A, 20201105-23:44:36, スポーツを支える裏方の人々 | 記者ほど素敵な商売はない　by HIROSHI IKEZAWA ／ 生沢 浩 | 英語とお仕事 | The Japan Times ST オンライン ― 英字新聞社ジャパンタイムズの英語学習サイト - Google Chrome
+A, 20201105-23:44:40, 支える人 英語 - Google 検索 - Google Chrome
+A, 20201105-23:45:04, 支える人 - Google 検索 - Google Chrome
+A, 20201105-23:45:18, 支える - Google 検索 - Google Chrome
+A, 20201105-23:45:28, 支える　物 - Google 検索 - Google Chrome
+A, 20201105-23:45:34, ●本当に人を支えるものって何だ？！ | １分で心がかるくなるラブレター♪byにっくん - Google Chrome
+A, 20201105-23:45:48, やらないことリスト - Google スプレッドシート - Google Chrome
+A, 20201105-23:45:50, d_2016, Online Whiteboard for Visual Collaboration - Google Chrome
+A, 20201105-23:46:06, 名前を付けて保存
+A, 20201105-23:46:08, d_2016, Online Whiteboard for Visual Collaboration - Google Chrome
+A, 20201105-23:47:03, VideoFrameWnd
+A, 20201105-23:47:07, タスクの切り替え
+A, 20201105-23:47:09, d_2016, Online Whiteboard for Visual Collaboration - Google Chrome
+A, 20201105-23:47:23, タスクの切り替え
+A, 20201105-23:47:25, VideoFrameWnd
+A, 20201105-23:47:27, d_2016, Online Whiteboard for Visual Collaboration - Google Chrome
+A, 20201105-23:47:31, 502 Bad Gateway - Google Chrome
+A, 20201105-23:47:33, やらないことリスト - Google スプレッドシート - Google Chrome
+A, 20201105-23:47:35, 新しいタブ - Google Chrome
+A, 20201105-23:47:51, 502 Bad Gateway - Google Chrome
+A, 20201105-23:47:55, 新しいタブ - Google Chrome
+A, 20201105-23:48:01, 502 bad gateway - Google 検索 - Google Chrome
+A, 20201105-23:48:03, 502 Bad Gatewayとは？エラーの原因と解決方法 - Google Chrome
+A, 20201105-23:48:13, 502 bad gateway - Google 検索 - Google Chrome
+A, 20201105-23:48:17, タスクの切り替え
+A, 20201105-23:48:19, 502 bad gateway - Google 検索 - Google Chrome
+A, 20201105-23:48:21, 502 Bad Gatewayの意味や原因と解決方法 | キーワードファインダー - Google Chrome
+A, 20201105-23:48:29, VideoFrameWnd
+A, 20201105-23:48:33, タスクの切り替え
+A, 20201105-23:48:35, Slack | d_2016 | JPHACKS2020
+A, 20201105-23:48:37, 無題 - Google Chrome
+A, 20201105-23:48:51, 502 Bad Gateway - Google Chrome
+A, 20201105-23:48:55, やらないことリスト - Google スプレッドシート - Google Chrome
+A, 20201105-23:49:29, タスクの切り替え
+A, 20201105-23:49:31, VideoFrameWnd
+A, 20201105-23:49:33, タスクの切り替え
+A, 20201105-23:49:35, Slack | * d_2016 | JPHACKS2020
+A, 20201105-23:49:37, Slack | d_2016 | JPHACKS2020
+A, 20201105-23:49:57, タスクの切り替え
+A, 20201105-23:49:59, やらないことリスト - Google スプレッドシート - Google Chrome
+A, 20201105-23:50:27, VideoFrameWnd
+A, 20201105-23:50:29, やらないことリスト - Google スプレッドシート - Google Chrome
+A, 20201105-23:50:49, VideoFrameWnd
+A, 20201105-23:51:57, やらないことリスト - Google スプレッドシート - Google Chrome
+A, 20201105-23:52:04, VideoFrameWnd
+A, 20201105-23:52:12, タスクの切り替え
+A, 20201105-23:52:16, VideoFrameWnd
+A, 20201105-23:52:34, タスクの切り替え
+A, 20201105-23:52:36, ● main.py - Visual Studio Code
+A, 20201105-23:52:38, タスクの切り替え
+A, 20201105-23:52:42, やらないことリスト - Google スプレッドシート - Google Chrome
+A, 20201105-23:52:44, 新しいタブ - Google Chrome
+A, 20201105-23:52:56, 見守り火災報知器 - Google 検索 - Google Chrome
+A, 20201105-23:53:04, VideoFrameWnd
+A, 20201105-23:53:24, タスクの切り替え
+A, 20201105-23:53:26, Slack | * d_2016 | JPHACKS2020
+A, 20201105-23:53:28, タスクの切り替え
+A, 20201105-23:53:32, VideoFrameWnd
+A, 20201105-23:53:34, タスクの切り替え
+A, 20201105-23:53:40, VideoFrameWnd
+A, 20201105-23:53:46, Cortana
+A, 20201105-23:53:54, VideoContainer
+A, 20201105-23:53:56, Cortana
+A, 20201105-23:54:00, Zoom ミーティング
+A, 20201105-23:54:02, 画面共有表示オプション
+A, 20201105-23:54:12, Zoom ミーティング
+A, 20201105-23:54:20, チャット
+A, 20201105-23:54:22, Zoom ミーティング
+A, 20201105-23:54:26, Cortana
+A, 20201105-23:54:36, Zoom ミーティング
+A, 20201105-23:56:14, Slack | d_2016 | JPHACKS2020
+A, 20201105-23:56:32, Zoom ミーティング
+A, 20201105-23:57:11, Slack | * d_2016 | JPHACKS2020
+A, 20201105-23:57:13, Slack | d_2016 | JPHACKS2020
+A, 20201105-23:57:25, Zoom ミーティング
+A, 20201105-23:57:29, タスクの切り替え
+A, 20201105-23:57:31, Slack | d_2016 | JPHACKS2020
+A, 20201105-23:58:15, タスクの切り替え
+A, 20201105-23:58:17, Zoom ミーティング
+A, 20201105-23:58:25, Slack | d_2016 | JPHACKS2020
+A, 20201105-23:58:57, Zoom ミーティング
+A, 20201105-23:59:01, タスクの切り替え
+A, 20201105-23:59:03, Zoom ミーティング
+A, 20201105-23:59:09, Slack | d_2016 | JPHACKS2020
+A, 20201105-23:59:11, Zoom ミーティング
+A, 20201105-23:59:13, タスクの切り替え
+A, 20201105-23:59:15, Slack | d_2016 | JPHACKS2020
+A, 20201105-23:59:17, Zoom ミーティング
+A, 20201105-23:59:51, Slack | d_2016 | JPHACKS2020

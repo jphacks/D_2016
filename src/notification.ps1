@@ -25,14 +25,28 @@ $src_name = $Args[1]
 $txt = $Args[0]
 $img_path = Join-Path $PSScriptRoot "media" 
 $img_path = Join-Path $img_path $src_name
+$time = "short"
 $template = @"
-<toast duration="5">
+<toast duration="$time">
     <visual>
         <binding template="ToastGeneric">
             <text> $txt </text>
             <image placement="hero" src="$img_path"/>
         </binding>
     </visual>
+    <actions>
+
+            <action
+                content="See more details"
+                arguments="action=viewdetails&amp;contentId=351"
+                activationType="foreground"/>
+
+            <action
+                content="Remind me later"
+                arguments="action=remindlater&amp;contentId=351"
+                activationType="background"/>
+
+        </actions>
 </toast>
 "@
 

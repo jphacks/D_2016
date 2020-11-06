@@ -125,6 +125,7 @@ def worker_main(event_log, event_voice, event_notification):
             logging.debug("event_voice.set()")
 
         need_to_notify = notification.need_to_notify()
+        
         if need_to_notify:
             event_notification.set()
             logging.debug("event_notification.set()")
