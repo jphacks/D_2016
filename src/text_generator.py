@@ -1,6 +1,7 @@
 import count_docx
 import sound
 import activity_log
+import config
 
 
 def generate_text(event) -> str:
@@ -24,6 +25,8 @@ def generate_text(event) -> str:
     if event == None:
         txt = "eventが指定されていません"
 
+    user_name = config.USER_NAME
+    txt = user_name + "さん、" + txt
     return txt
 
 # TODO たまに名前で読んでくれる?
