@@ -85,7 +85,7 @@
 
 ## 開発技術
 ⚡システム構成図
-
+[![IMAGE ALT TEXT HERE](https://github.com/jphacks/D_2016/blob/master/system_image.jpg)]
 
 ### 活用した技術
 #### API・データ
@@ -95,7 +95,7 @@
 #### フレームワーク・ライブラリ・モジュール
 - Python
 - Cortana
-- 
+その他ライブラリの詳細は**requirements.txt**を参照
 
 #### デバイス
 - Windows10搭載PC 
