@@ -1,6 +1,9 @@
 # txtを無視する
 *.txt
 
+# pklを無視する
+*.pkl
+
 # pycを無視する
 *.pyc
 
@@ -9,6 +12,9 @@
 
 # __pycacheを無視する
 *.pyc
+
+# batを無視する
+*.bat
 
 # 既にadd/commitされたファイルは、該当ディレクトリにて、
 # git rm --cached ファイル名 
