@@ -1,6 +1,9 @@
 # txtを無視する
 *.txt
 
+# pklを無視する
+*.pkl
+
 # pycを無視する
 *.pyc
 
