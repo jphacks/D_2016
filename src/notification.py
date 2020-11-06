@@ -7,10 +7,10 @@ def generate_path(event) -> str:
         path = "startup_300px.gif"
     
     if event == "terminate":
-        path = "ending_300px.gif"
+        path = "ending_ver2_300px.gif"
     
     if event == "cheer":
-        path = "breaktime_300px.gif"
+        path = "breaktime_ver2_300px.gif"
     
     if event == "praise":
         path = "mirai.gif"
