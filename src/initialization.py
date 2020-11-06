@@ -39,5 +39,15 @@ def add_to_startup(file_path: str):
     #     vbs_file.write(text)
 
 
+def set_user_setting(name: str):
+    path = "config.py"
+    text = "USER_NAME = " + name + "\n"
+    with open(path, "w+", encoding="utf-8") as f:
+        f.write(text)
+    print("ユーザー名" + name + "を config.py に登録しました")
+
+
 if __name__ == "__main__":
+    name = input("小町ちゃんに呼んでほしい名前をひらがなで入力してください：")
+    set_user_setting(name)
     add_to_startup("main.py")
