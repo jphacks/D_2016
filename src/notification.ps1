@@ -26,8 +26,10 @@ Write-Host = $Args[1]
 $src_name = $Args[1]
 $txt = $Args[0]
 
-$img_path = Join-Path $PSScriptRoot "media" 
-$img_path = Join-Path $img_path $src_name
+$dir_path = Join-Path $PSScriptRoot "media" 
+$img_path = Join-Path $dir_path $src_name
+$icon_path = Join-Path $dir_path "komati.ico"
+echo $icon_path
 
 $time = "long"
 $template = @"
@@ -35,25 +37,21 @@ $template = @"
     <visual>
         <binding template="ToastGeneric">
             <text> $txt </text>
+            <image placement="appLogoOverride" hint-crop="circle" src="$icon_path"/>
             <image placement="hero" src="$img_path"/>
         </binding>
     </visual>
     <actions>
 
             <action
-                content="OK"
-                arguments="action=viewdetails&amp;contentId=351"
-                activationType="foreground"/>
-
-            <action
                 content="Thank you"
                 arguments="action=remindlater&amp;contentId=351"
                 activationType="background"/>
 
-        </actions>
+    </actions>
 </toast>
 "@
-
+            
 #<audio silent="false" src="ms-appx:///Assets/NewMessage.mp3"/>
 Toast
 exit
