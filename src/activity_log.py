@@ -9,29 +9,33 @@ import count_docx
 # This code is based from
 # https://github.com/aikige/homeBinWin/blob/master/dumpForegroundWindow.py
 
+
 def get_finish_word_num(finish_word: str) -> int:
     word_num = count_docx.count_docx(finish_word)
     return int(word_num)
+
 
 def get_previous_saved_time() -> float:
     file_name = "log/start_word_num.pkl"
     if not os.path.exists(file_name):
         return time.time()
-    
+
     with open(file_name, "rb") as f:
         count_docx_dict = pickle.load(f)
-    
+
     return int(count_docx_dict["time"])
+
 
 def get_start_word_num() -> int:
     file_name = "log/start_word_num.pkl"
     if not os.path.exists(file_name):
-        title = activity_log.get_active_window_title()
-        set_start_word_num(title.split()[0])    
+        title = get_active_window_title()
+        set_start_word_num(title.split()[0])
     with open(file_name, "rb") as f:
         count_docx_dict = pickle.load(f)
     print(int(count_docx_dict["word_count"]))
     return int(count_docx_dict["word_count"])
+
 
 def set_start_word_num(start_word: str):
     file_name = "log/start_word_num.pkl"
@@ -50,8 +54,10 @@ def set_start_word_num(start_word: str):
     with open(file_name, 'wb') as f:
         pickle.dump(count_docx_dict, f)
 
+
 def get_active_window_title():
     return GetWindowText(GetForegroundWindow())
+
 
 def get_log_string(title: str, state: str = "A"):
     """
@@ -79,9 +85,13 @@ def get_working_time_log_filename(date):
 
 def get_old_activity() -> str:
     tmp_file_path = "log/tmp.txt"
+    if not os.path.exists(tmp_file_path):
+        activity = get_active_window_title()
+        set_old_activity(activity)
     with open(tmp_file_path, "r", encoding="UTF-8", errors="ignore") as f:
         old = f.readline()
     return old
+
 
 def set_old_activity(old_activity: str):
     tmp_file_path = "log/tmp.txt"
@@ -247,8 +257,9 @@ def main():
 
     # 処理ループ
     keep_logging(args.interval, args.skip_duplicate)
-    #set_start_word_num("test.docx")
-    #print(get_start_word_num())
+    # set_start_word_num("test.docx")
+    # print(get_start_word_num())
+
 
 if __name__ == '__main__':
     main()
