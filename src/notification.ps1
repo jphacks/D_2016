@@ -25,7 +25,7 @@ $src_name = $Args[1]
 $txt = $Args[0]
 $img_path = Join-Path $PSScriptRoot "media" 
 $img_path = Join-Path $img_path $src_name
-$time = "short"
+$time = "long"
 $template = @"
 <toast duration="$time">
     <visual>
@@ -37,12 +37,12 @@ $template = @"
     <actions>
 
             <action
-                content="See more details"
+                content="OK"
                 arguments="action=viewdetails&amp;contentId=351"
                 activationType="foreground"/>
 
             <action
-                content="Remind me later"
+                content="Thank you"
                 arguments="action=remindlater&amp;contentId=351"
                 activationType="background"/>
 
