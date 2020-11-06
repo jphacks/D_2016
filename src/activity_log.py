@@ -4,14 +4,30 @@ import datetime
 from win32gui import GetWindowText, GetForegroundWindow
 import pickle
 from collections import defaultdict
+import count_docx
 
 # This code is based from
 # https://github.com/aikige/homeBinWin/blob/master/dumpForegroundWindow.py
 
+def get_finish_word_num(finish_word: str) -> int:
+    word_num = count_docx.count_docx(finish_word)
+    return int(word_num)
+
+def get_start_word_num() -> int:
+    file_path = "log/start_word_num.txt"
+    with open(file_path, "r", encoding="UTF-8", errors="ignore") as f:
+        word_num = f.readline()
+    return int(word_num)
+
+def set_start_word_num(start_word: str):
+    file_path = "log/start_word_num.txt"
+    word_num = count_docx.count_docx(start_word)
+    with open(file_path, "w", encoding="UTF-8", errors="ignore") as f:
+        f.write(str(word_num))
+
 
 def get_active_window_title():
     return GetWindowText(GetForegroundWindow())
-
 
 def get_log_string(title: str, state: str = "A"):
     """
@@ -42,7 +58,6 @@ def get_old_activity() -> str:
     with open(tmp_file_path, "r", encoding="UTF-8", errors="ignore") as f:
         old = f.readline()
     return old
-
 
 def set_old_activity(old_activity: str):
     tmp_file_path = "log/tmp.txt"
