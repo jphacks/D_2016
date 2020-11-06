@@ -1,5 +1,5 @@
 # はかどり小町ちゃん
-[![IMAGE ALT TEXT HERE](https://jphacks.com/wp-content/uploads/2020/09/JPHACKS2020_ogp.jpg)](https://www.youtube.com/watch?v=G5rULR53uMk)
+[![IMAGE ALT TEXT HERE](https://github.com/jphacks/D_2016/blob/master/thumbnail.png)](https://www.youtube.com/watch?v=G5rULR53uMk)
 ⚡↑画像とリンクを差し替え
 
 
