@@ -23,7 +23,8 @@ def add_to_startup(file_path: str):
     if need_to_add_startup:
         with open(bat_path + '\\'"komati.bat", "w+") as bat_file:
             text = "cd " + os.path.dirname(abs_file_path) + "\n"
-            text += 'python {}'.format(file_path)
+            text += 'python {}'.format(file_path) + "\n"
+            text += "CMD"  # コマンド入力まち状態
             bat_file.write(text)
         print(file_path + " を実行する bat ファイルをスタートアップに登録しました")
 
@@ -32,7 +33,8 @@ def add_to_startup(file_path: str):
     if need_to_make_bat:
         with open("komati.bat", "w+") as bat_file:
             text = "cd " + os.path.dirname(abs_file_path) + "\n"
-            text += 'python {}'.format(file_path)
+            text += 'python {}'.format(file_path) + "\n"
+            text += "CMD"  # コマンド入力まち状態
             bat_file.write(text)
     print(file_path + " を実行する bat ファイルを src配下に作成しました")
 
