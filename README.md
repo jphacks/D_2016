@@ -68,8 +68,7 @@
 
 
 ### 解決出来ること
-
-
+**リモートワーク環境下での作業のマンネリ化を防ぎます。**
 
 ### 今後の展望
 
@@ -85,7 +84,7 @@
 
 ## 開発技術
 ⚡システム構成図
-[![IMAGE ALT TEXT HERE](https://github.com/jphacks/D_2016/blob/master/system_image.jpg)]
+![IMAGE ALT TEXT HERE](https://github.com/jphacks/D_2016/blob/master/system_image.jpg)
 
 ### 活用した技術
 #### API・データ
@@ -95,6 +94,7 @@
 #### フレームワーク・ライブラリ・モジュール
 - Python
 - Cortana
+
 その他ライブラリの詳細は**requirements.txt**を参照
 
 #### デバイス
