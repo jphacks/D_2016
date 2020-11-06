@@ -2,6 +2,7 @@ import count_docx
 import sound
 import activity_log
 import config
+import datetime
 
 def get_start_word_num() -> int:
     file_path = "log/start_word_num.txt"
@@ -12,7 +13,17 @@ def get_start_word_num() -> int:
 def generate_text(event) -> str:
     txt = ""
     if event == "start":
-        txt = "今日もいちにち頑張りましょう!"
+        
+        # 時間応じてtxtを変更する
+        now = datetime.datetime.now()
+        now_hour =now.hour
+        
+        if 6 < now_hour <11:
+            txt = "おはようございます。今日もいちにち頑張りましょう!"
+        elif  (0 < now_hour < 3) or (21 < now_hour < 23):
+            txt = "夜遅くまでお疲れ様です。"
+        else:
+            txt = "今日もいちにち頑張りましょう!"
 
     if event == "terminate":
         f_num = count_docx.count_docx("test.docx")
@@ -40,7 +51,7 @@ def generate_text(event) -> str:
 
 
 if __name__ == '__main__':
-    event = "cheer"
+    event = "start"
     txt = generate_text(event)
     print(txt)
     sound.play_sound(txt)
