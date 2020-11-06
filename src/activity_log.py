@@ -13,18 +13,42 @@ def get_finish_word_num(finish_word: str) -> int:
     word_num = count_docx.count_docx(finish_word)
     return int(word_num)
 
+def get_previous_saved_time() -> float:
+    file_name = "log/start_word_num.pkl"
+    if not os.path.exists(file_name):
+        return time.time()
+    
+    with open(file_name, "rb") as f:
+        count_docx_dict = pickle.load(f)
+    
+    return int(count_docx_dict["time"])
+
 def get_start_word_num() -> int:
-    file_path = "log/start_word_num.txt"
-    with open(file_path, "r", encoding="UTF-8", errors="ignore") as f:
-        word_num = f.readline()
-    return int(word_num)
+    file_name = "log/start_word_num.pkl"
+    if not os.path.exists(file_name):
+        title = activity_log.get_active_window_title()
+        set_start_word_num(title.split()[0])    
+    with open(file_name, "rb") as f:
+        count_docx_dict = pickle.load(f)
+    print(int(count_docx_dict["word_count"]))
+    return int(count_docx_dict["word_count"])
 
 def set_start_word_num(start_word: str):
-    file_path = "log/start_word_num.txt"
+    file_name = "log/start_word_num.pkl"
     word_num = count_docx.count_docx(start_word)
-    with open(file_path, "w", encoding="UTF-8", errors="ignore") as f:
-        f.write(str(word_num))
+    if not os.path.exists(file_name):
+        working_time_dict = defaultdict(int)
+        working_time_dict["init"] = 1
+        with open(file_name, 'wb') as f:
+            pickle.dump(working_time_dict, f)
 
+    with open(file_name, "rb") as f:
+        count_docx_dict = pickle.load(f)
+
+    count_docx_dict["word_count"] = int(word_num)
+    count_docx_dict["time"] = time.time()
+    with open(file_name, 'wb') as f:
+        pickle.dump(count_docx_dict, f)
 
 def get_active_window_title():
     return GetWindowText(GetForegroundWindow())
@@ -223,7 +247,8 @@ def main():
 
     # 処理ループ
     keep_logging(args.interval, args.skip_duplicate)
-
+    #set_start_word_num("test.docx")
+    #print(get_start_word_num())
 
 if __name__ == '__main__':
     main()

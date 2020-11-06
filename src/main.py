@@ -38,19 +38,9 @@ def log_activity_to_file(previous_program_list, current_program_list,
         title = terminated
         state = "T"
         activity_log.print_to_file(title, state)
-        start_word_num = activity_log.get_start_word_num()
-        finish_word_num = activity_log.get_finish_word_num(title.split()[0])
-        need_to_notify = notification.need_to_notify(start_word_num,finish_word_num)
-        if need_to_notify == 0:
-            event_notification.set()
-            event_voice.set()
-        elif need_to_notify == 1:
-            working_state = "cheer"
-            event_notification.set()
-            event_voice.set()
+        event_notification.set()
+        event_voice.set()
         
-        need_to_notify = False
-
     if started:
         working_state = "start"
         title = started
@@ -69,12 +59,25 @@ def log_activity_to_file(previous_program_list, current_program_list,
             event_voice.set()
             event_notification.set()
 
+    
     # アクティブウィンドウの記録
     title = activity_log.get_title_of_active_window(skip_duplicate)
     state = "A"
     if title:
         activity_log.print_to_file(title, state)
 
+    title = activity_log.get_active_window_title() 
+    if len(title.split()) < 2:
+        return 
+    elif ".docx" in title.split()[0] and title.split()[-1] == "Word":
+        start_word_num = activity_log.get_start_word_num()
+        finish_word_num = activity_log.get_finish_word_num(title.split()[0])
+        need_to_notify = notification.need_to_notify(start_word_num,finish_word_num)
+        if need_to_notify == True:
+            working_state = "praise"
+            event_notification.set()
+            event_voice.set()
+            
 
 def worker_log(event_log):
     """ログ記録のためのworker
@@ -111,6 +114,7 @@ def worker_voice(event_voice):
 def worker_notification(event_notification):
     """通知のためのworker
     """
+    global working_state
     while not stop:
         # event.set が実行されるまで待機
         event_notification.wait()
@@ -120,7 +124,10 @@ def worker_notification(event_notification):
         img_path = notification.generate_path(working_state)
         notification.notify(text, img_path)
         logging.debug('notify end')
-
+        if working_state == "praise": 
+            title = activity_log.get_active_window_title() 
+            activity_log.set_start_word_num(title.split()[0])
+            working_state = "idle"
 
 def worker_main(event_log, event_voice, event_notification):
     """処理の中心となるworker
