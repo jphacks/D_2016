@@ -41,7 +41,7 @@ def add_to_startup(file_path: str):
 
 def set_user_setting(name: str):
     path = "config.py"
-    text = "USER_NAME = " + name + "\n"
+    text = "USER_NAME = '" + name + "'\n"
     with open(path, "w+", encoding="utf-8") as f:
         f.write(text)
     print("ユーザー名" + name + "を config.py に登録しました")
