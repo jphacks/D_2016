@@ -2,7 +2,7 @@
 
 ## 実行環境
 
-- Windows 10
+- Windows10 (Home、Enterprise、Educationで検証)
 - Python 3.X (3.7.4、3.9.0で検証)
 
 
