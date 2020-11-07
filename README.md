@@ -112,6 +112,8 @@
 * 小町ちゃんの3Dモデルよりgifファイルの生成<br>
 
 * ⚡特に力を入れた部分をファイルリンク、またはcommit_idを記載してください。
+    * 機能の統合とマルチスレッド部分：[main.py](https://github.com/jphacks/D_2016/blob/master/src/main.py)
+    * プログラムの起動、終了、編集などの監視：[activity_log.py](https://github.com/jphacks/D_2016/blob/master/src/activity_log.py)
 
 ### 実行手順
 [こちら](https://github.com/jphacks/D_2016/blob/master/src/README.md)をご覧ください。簡単なトラブルシューティングについても記載しています。
