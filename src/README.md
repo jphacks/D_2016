@@ -72,3 +72,38 @@ python src/initialization.py
 
 - `src/test.doct`をアクティブウィンドウにして1時間以上作業する
 - `src/test.docx`を夜中(21時～翌3時)に起動する
+
+
+
+## トラブルシューティング
+
+### 音声は流れるが、通知が出ません
+
+**通知設定がオフになっている**かもしれません。`Windows`キーを押して「通知とアクションの設定」から「アプリやその他の送信者からの通知を取得する」をオンにしてみてください。
+
+
+
+## `main.py`を実行すると`ModuleNotFoundError`が出る
+
+```python
+Traceback (most recent call last):
+  File "C:\Users\{user_name}\Documents\GitHub\D_2016\src\main.py", line 9, in <module>
+    import text_generator
+  File "C:\Users\{user_name}\Documents\GitHub\D_2016\src\text_generator.py", line 4, in <module>
+    import config
+ModuleNotFoundError: No module named 'config'
+```
+
+先に`src/initialization.py`を実行してください。
+
+
+
+### venvの仮想環境を使っているとバッチファイルが動きません
+
+対応していないので、自分でvenvをactivateしたのちに`src/main.py`を実行してください。
+
+
+
+### 名前を変えたい
+
+`src/config.py`をいじるか、再度`src/initialization.py`を実行してください。
