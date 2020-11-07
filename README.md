@@ -110,6 +110,9 @@
 * ⚡独自で開発したものの内容をこちらに記載してください
 * ⚡特に力を入れた部分をファイルリンク、またはcommit_idを記載してください。
 
+### 実行手順
+[こちら](https://github.com/jphacks/D_2016/blob/master/src/README.md)をご覧ください。
+
 ### 参考文献
 [1]　[Shiomi M, OkumuraS, Kimoto M, Iio T, Shimohara K, <br>
 　　"Two is Better than One: Social Rewards from Two Agents Enhance Offline <br>
