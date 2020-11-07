@@ -14,7 +14,7 @@
 1. [はかどり小町ちゃんを起動](#はかどり小町ちゃんを起動)
 1. [小町ちゃんと一緒に作業する！](#小町ちゃんと一緒に作業する！)
 1. [トラブルシューティング](#トラブルシューティング)
-
+<br>
 
 
 ### 必要パッケージのインストール
@@ -30,7 +30,11 @@ pywin32==228
 ```
 
 以下のコマンドで一括でインストールできます。
-`pip install -r requirements.txt` 
+
+```
+pip install -r requirements.txt
+```
+<br>
 
 
 ### `src/initialization.py`の実行
@@ -54,12 +58,15 @@ python src/initialization.py
 #### 「src/配下にバッチファイルを作成しますか？(y/n):」
 
 作成すると`src/`配下にダブルクリックで「はかどり小町ちゃん」を起動するショートカットが作成されます。
+<br>
 
 
 ###  はかどり小町ちゃんを起動
 
 `python src/main.py`と実行、または`komati.bat`をダブルクリックして起動。
 起動すると、黒い画面が立ち上がります。
+<br>
+
 
 ### 小町ちゃんと一緒に作業する！
 
@@ -73,7 +80,7 @@ python src/initialization.py
 
 - `src/test.doct`をアクティブウィンドウにして1時間以上作業する
 - `src/test.docx`を夜中(21時～翌3時)に起動する
-
+<br>
 
 
 ## トラブルシューティング
@@ -81,7 +88,7 @@ python src/initialization.py
 ### 音声は流れるが、通知が出ません
 
 **通知設定がオフになっている**かもしれません。`Windows`キーを押して「通知とアクションの設定」から「アプリやその他の送信者からの通知を取得する」をオンにしてみてください。
-
+<br>
 
 
 ## `main.py`を実行すると`ModuleNotFoundError`が出る
@@ -96,15 +103,16 @@ ModuleNotFoundError: No module named 'config'
 ```
 
 先に`src/initialization.py`を実行してください。
-
+<br>
 
 
 ### venvの仮想環境を使っているとバッチファイルが動きません
 
 対応していないので、自分でvenvをactivateしたのちに`src/main.py`を実行してください。
-
+<br>
 
 
 ### 名前を変えたい
 
 `src/config.py`をいじるか、再度`src/initialization.py`を実行してください。
+<br>
