@@ -28,7 +28,7 @@ def notify(txt,img_path):
     
     if txt == "":
         return
-    
+    os.system('chcp 932')
     os.system('powershell -Command' + ' ' +
               'powershell -ExecutionPolicy RemoteSigned .\\' + path + " " + str(txt) +" "+ img_path)
 
