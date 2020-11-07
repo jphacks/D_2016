@@ -61,7 +61,7 @@ python src/initialization.py
 <br>
 
 
-###  はかどり小町ちゃんを起動
+### はかどり小町ちゃんを起動
 
 `python src/main.py`と実行、または`komati.bat`をダブルクリックして起動。
 起動すると、黒い画面が立ち上がります。
@@ -73,13 +73,15 @@ python src/initialization.py
 黒い画面が出た状態で以下のことを試してみましょう。
 
 - `src/test.docx`を起動
-- `src/test.docx`に100文字以上記入して保存する
+- `src/test.docx`に100文字以上記入して`Ctrl+S`で保存する
 - `src/test.docx`を閉じる
 
 また頑張ってる状態に応じて応援してくれます。
 
 - `src/test.doct`をアクティブウィンドウにして1時間以上作業する
 - `src/test.docx`を夜中(21時～翌3時)に起動する
+
+終了する際は、黒い画面で「q」ボタンを長押ししてください。(**「Ctrl + c」では閉じれません**)。`bat`ファイルで起動している場合は、ウィンドウを閉じると終了します。
 <br>
 
 
@@ -91,7 +93,7 @@ python src/initialization.py
 <br>
 
 
-## `main.py`を実行すると`ModuleNotFoundError`が出る
+### `main.py`を実行すると`ModuleNotFoundError`が出る
 
 ```python
 Traceback (most recent call last):
@@ -105,6 +107,9 @@ ModuleNotFoundError: No module named 'config'
 先に`src/initialization.py`を実行してください。
 <br>
 
+### `main.py`が終了できない
+終了する際は、黒い画面で「q」ボタンを長押ししてください。(**「Ctrl + c」では閉じれません**)
+<br>
 
 ### venvの仮想環境を使っているとバッチファイルが動きません
 
