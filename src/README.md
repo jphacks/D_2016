@@ -127,3 +127,16 @@ ModuleNotFoundError: No module named 'config'
 
 `src/config.py`をいじるか、再度`src/initialization.py`を実行してください。
 <br>
+
+## その他のエラーの可能性について
+
+PowerShellの実行ポリシーを変更する必要があるかもしれません。
+
+1. PowerShellを管理者権限で開く。
+2. PowerShell上で、```Set-ExecutionPolicy -Scope CurrentUser```を打ち込む(レスポンスにはYを入力)。
+3. 以下のようなレスポンスが返ってくるので、```RemoteSigned```と入力する。
+```
+コマンド パイプライン位置 1 のコマンドレット Set-ExecutionPolicy
+次のパラメーターに値を指定してください:
+ExecutionPolicy:
+```
