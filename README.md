@@ -114,7 +114,7 @@
 * ⚡特に力を入れた部分をファイルリンク、またはcommit_idを記載してください。
 
 ### 実行手順
-[こちら](https://github.com/jphacks/D_2016/blob/master/src/README.md)をご覧ください。
+[こちら](https://github.com/jphacks/D_2016/blob/master/src/README.md)をご覧ください。簡単なトラブルシューティングについても記載しています。
 
 ### 出展元
 [ミライ小町公式サイト](https://www.miraikomachi.com/)
